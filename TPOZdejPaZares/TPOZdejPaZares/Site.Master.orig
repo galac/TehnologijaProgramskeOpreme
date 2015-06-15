@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TPOZdejPaZares.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Spletni Student</title>
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+  <script type="text/javascript" src="/scripts/moment.min.js"></script>
+  <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
+  <!-- include your less or built css files  -->
+  <!-- 
+  bootstrap-datetimepicker-build.less will pull in "../bootstrap/variables.less" and "bootstrap-datetimepicker.less";
+  or-->
+  <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.css" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Default">Spletni student</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" id="LoginLink" href="~/LoginForm">Prijava</a></li>
+                        <li><a runat="server" id="ForgetLink" href="~/PozabljenoGeslo">Pozabljeno Geslo</a></li>
+                        <li><a runat="server" href="~/PonastaviGeslo">Ponastavi Geslo</a></li>
+                        <li><a runat="server" href="~/Student">Iskanje študentov</a></li>
+                        <li><a runat="server" href="~/ParsanjePodatkov">Uvažanje podatkov</a></li>
+<<<<<<< HEAD
+                        <li><a runat="server" href="~/UvodVpisnegaLista">Zajem vpisnega lista</a></li>
+=======
+                        <li><a runat="server" href="~/ZajemVpisnegaLista">Zajem vpisnega lista</a></li>
+                        <li><a runat="server" id="AdminLink" href="~/Referent/TestReferent">Referent</a></li>
+>>>>>>> origin/Luka_new_branch
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+                    <a class="navbar-brand" runat="server" href="~/Default">
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Odjava" CssClass="btn btn-primary" />
+            </a>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Spletni Student</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

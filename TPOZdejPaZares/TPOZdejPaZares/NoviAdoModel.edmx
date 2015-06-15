@@ -1,0 +1,2202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="t8_2015Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Drzava">
+          <Key>
+            <PropertyRef Name="idDrzava" />
+          </Key>
+          <Property Name="idDrzava" Type="int" Nullable="false" />
+          <Property Name="imeDrzave" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="IzpitniRok">
+          <Key>
+            <PropertyRef Name="IDIzpitniRok" />
+          </Key>
+          <Property Name="IDIzpitniRok" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DatumIzpitnegaRoka" Type="datetime" Precision="0" />
+          <Property Name="VrstaIzpitnegaRoka" Type="varchar" MaxLength="45" />
+          <Property Name="Prostor" Type="varchar" MaxLength="45" />
+          <Property Name="SteviloMest" Type="int" />
+          <Property Name="IzvedbaPredmeta_idIzvedbaPredmeta" Type="int" />
+          <Property Name="Veljaven" Type="int" />
+        </EntityType>
+        <EntityType Name="IzvedbaPredmeta">
+          <Key>
+            <PropertyRef Name="idIzvedbaPredmeta" />
+          </Key>
+          <Property Name="idIzvedbaPredmeta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Profesor_idProfesor" Type="int" Nullable="false" />
+          <Property Name="Profesor_idProfesor1" Type="int" />
+          <Property Name="Profesor_idProfesor2" Type="int" />
+          <Property Name="StudijskoLeto_idStudijskoLeto" Type="int" Nullable="false" />
+          <Property Name="PredmetStudijskegaPrograma_PredmetStudijskegaProgramaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Klasius">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="stopnjaStudija_IdStopnjaStudija" Type="int" />
+        </EntityType>
+        <EntityType Name="Letnik">
+          <Key>
+            <PropertyRef Name="idLetnik" />
+          </Key>
+          <Property Name="idLetnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="letnik" Type="int" />
+        </EntityType>
+        <EntityType Name="NacinStudija">
+          <Key>
+            <PropertyRef Name="idNacinStudija" />
+          </Key>
+          <Property Name="idNacinStudija" Type="int" Nullable="false" />
+          <Property Name="opisNacina" Type="varchar" MaxLength="45" />
+          <Property Name="engOpisNacina" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Obcina">
+          <Key>
+            <PropertyRef Name="idObcina" />
+          </Key>
+          <Property Name="idObcina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imeObcine" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="OblikaStudija">
+          <Key>
+            <PropertyRef Name="idOblikaStudija" />
+          </Key>
+          <Property Name="idOblikaStudija" Type="int" Nullable="false" />
+          <Property Name="opisOblike" Type="varchar" MaxLength="45" />
+          <Property Name="engOpisOblike" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Posta">
+          <Key>
+            <PropertyRef Name="idPosta" />
+          </Key>
+          <Property Name="idPosta" Type="int" Nullable="false" />
+          <Property Name="postnaStevilka" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Predmet">
+          <Key>
+            <PropertyRef Name="idPredmet" />
+          </Key>
+          <Property Name="idPredmet" Type="int" Nullable="false" />
+          <Property Name="imePredmeta" Type="varchar" MaxLength="255" />
+          <Property Name="kreditneTocke" Type="int" />
+        </EntityType>
+        <EntityType Name="PredmetStudijskegaPrograma">
+          <Key>
+            <PropertyRef Name="IdPredmetStudijskegaPrograma" />
+          </Key>
+          <Property Name="SestavniDelPred_idSestavniDelPred" Type="int" Nullable="false" />
+          <Property Name="Letnik_idLetnik" Type="int" Nullable="false" />
+          <Property Name="StudijskiProgram_idStudijskiProgram1" Type="int" Nullable="false" />
+          <Property Name="Predmet_idPredmet1" Type="int" Nullable="false" />
+          <Property Name="IdPredmetStudijskegaPrograma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prijava">
+          <Key>
+            <PropertyRef Name="idPrijava" />
+          </Key>
+          <Property Name="idPrijava" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imeStudenta" Type="varchar" MaxLength="45" />
+          <Property Name="priimekStudenta" Type="varchar" MaxLength="45" />
+          <Property Name="gesloStudent" Type="varchar" MaxLength="45" />
+          <Property Name="mailStudent" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="PrijavaNaIzpit">
+          <Key>
+            <PropertyRef Name="idPrijavaNaizpit" />
+          </Key>
+          <Property Name="idPrijavaNaizpit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DatumPrijave" Type="datetime" Precision="0" />
+          <Property Name="DatumSpremembe" Type="datetime" Precision="0" />
+          <Property Name="IzpitniRok_IdIzpitniRok" Type="int" />
+          <Property Name="VpisaniPredmet_IdVpisanipredmet" Type="int" />
+          <Property Name="StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" Type="int" />
+          <Property Name="OcenaIzpita" Type="int" />
+          <Property Name="StTock" Type="int" />
+        </EntityType>
+        <EntityType Name="Profesor">
+          <Key>
+            <PropertyRef Name="idProfesor" />
+          </Key>
+          <Property Name="idProfesor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imeProfesorja" Type="varchar" MaxLength="45" />
+          <Property Name="priimekProfesorja" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="SestavniDelPred">
+          <Key>
+            <PropertyRef Name="idSestavniDelPred" />
+          </Key>
+          <Property Name="idSestavniDelPred" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opisSestavnegaDela" Type="varchar" MaxLength="45" />
+          <Property Name="jeModul" Type="bool" />
+        </EntityType>
+        <EntityType Name="Sklep">
+          <Key>
+            <PropertyRef Name="idSklep" />
+          </Key>
+          <Property Name="idSklep" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VsebinaSklepa" Type="varchar" MaxLength="9999" Nullable="false" />
+          <Property Name="Student_IdStudenta" Type="int" Nullable="false" />
+          <Property Name="Student_idStudent" Type="int" Nullable="false" />
+          <Property Name="Organ" Type="varchar" MaxLength="45" />
+          <Property Name="DatumSprejetjaSklepa" Type="date" />
+          <Property Name="DatumVeljaveSklepa" Type="date" />
+        </EntityType>
+        <EntityType Name="StatusPrijave">
+          <Key>
+            <PropertyRef Name="idStatusPrijave" />
+          </Key>
+          <Property Name="idStatusPrijave" Type="int" Nullable="false" />
+          <Property Name="opisStatusaPrijave" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="stopnjaStudija">
+          <Key>
+            <PropertyRef Name="idStopnjaStudija" />
+          </Key>
+          <Property Name="idStopnjaStudija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kratica" Type="varchar" MaxLength="45" />
+          <Property Name="stopnja" Type="varchar" MaxLength="95" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="idStudent" />
+          </Key>
+          <Property Name="idStudent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Drzava_idDrzava" Type="int" />
+          <Property Name="Posta_idPosta" Type="int" />
+          <Property Name="Drzava_idDrzavaRojstva" Type="int" />
+          <Property Name="Prijava_idPrijava" Type="int" />
+          <Property Name="imeStudenta" Type="varchar" MaxLength="45" />
+          <Property Name="priimekStudenta" Type="varchar" MaxLength="45" />
+          <Property Name="gesloStudenta" Type="varchar" MaxLength="45" />
+          <Property Name="mailStudenta" Type="varchar" MaxLength="45" />
+          <Property Name="vpisnaStudenta" Type="int" />
+          <Property Name="Vloge_idVloge" Type="int" />
+          <Property Name="Obcina_idObcina" Type="int" />
+          <Property Name="Naslov" Type="varchar" MaxLength="45" />
+          <Property Name="NaslovZacasni" Type="varchar" MaxLength="45" />
+          <Property Name="Drzava_idDrzavaZacasna" Type="int" />
+          <Property Name="Posta_idPostaZacasna" Type="int" />
+          <Property Name="Telefon" Type="varchar" MaxLength="45" />
+          <Property Name="Obcina_idObcinaZacasna" Type="int" />
+          <Property Name="VrocanjeStalnoBivalisce" Type="tinyint" />
+          <Property Name="EMSO" Type="varchar" MaxLength="45" />
+          <Property Name="Drzava_idDrzavaDrzavljanstvo" Type="int" />
+          <Property Name="Spol" Type="char" MaxLength="1" />
+          <Property Name="DavcnaStevilka" Type="bigint" />
+          <Property Name="DatumRojstva" Type="date" />
+          <Property Name="KrajRojstva" Type="varchar" MaxLength="45" />
+          <Property Name="Obcina_idObcinaRojstva" Type="int" />
+          <Property Name="Klasius_idKlasius" Type="int" />
+        </EntityType>
+        <EntityType Name="StudijskiProgram">
+          <Key>
+            <PropertyRef Name="idStudijskiProgram" />
+          </Key>
+          <Property Name="idStudijskiProgram" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" />
+          <Property Name="sifraEVS" Type="int" />
+          <Property Name="sifraKratka" Type="varchar" MaxLength="45" />
+          <Property Name="stSemestrov" Type="int" />
+          <Property Name="StudijskiProgram_idStopnjaStudija" Type="int" />
+        </EntityType>
+        <EntityType Name="StudijskoLeto">
+          <Key>
+            <PropertyRef Name="idStudijskoLeto" />
+          </Key>
+          <Property Name="idStudijskoLeto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="studijskoLeto" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Vloge">
+          <Key>
+            <PropertyRef Name="idVloge" />
+          </Key>
+          <Property Name="idVloge" Type="int" Nullable="false" />
+          <Property Name="opisVloge" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Vpis">
+          <Key>
+            <PropertyRef Name="idVpis" />
+          </Key>
+          <Property Name="idVpis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VrstaVpisa_idVrstaVpisa" Type="int" Nullable="false" />
+          <Property Name="OblikaStudija_idOblikaStudija" Type="int" Nullable="false" />
+          <Property Name="Letnik_idLetnik" Type="int" Nullable="false" />
+          <Property Name="StudijskiProgram_idStudijskiProgram" Type="int" Nullable="false" />
+          <Property Name="NacinStudija_idNacinStudija" Type="int" Nullable="false" />
+          <Property Name="Student_idStudent1" Type="int" Nullable="false" />
+          <Property Name="Potrjen" Type="int" Nullable="false" />
+          <Property Name="StudijskoLeto" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VpisaniPredmet">
+          <Key>
+            <PropertyRef Name="idVpisaniPredmet" />
+          </Key>
+          <Property Name="Vpis_idVpis" Type="int" Nullable="false" />
+          <Property Name="idVpisaniPredmet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ocena" Type="int" />
+          <Property Name="IzvedbaPredmeta_idIzvedbaPredmeta" Type="int" />
+        </EntityType>
+        <EntityType Name="VrstaVpisa">
+          <Key>
+            <PropertyRef Name="idVrstaVpisa" />
+          </Key>
+          <Property Name="idVrstaVpisa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opisVpisa" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Zeton">
+          <Key>
+            <PropertyRef Name="idZeton" />
+          </Key>
+          <Property Name="idZeton" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Izkoriscen" Type="bit" />
+          <Property Name="Student_idStudent" Type="int" />
+          <Property Name="Vpis_idVpis" Type="int" />
+          <Property Name="studijskiProgram" Type="int" />
+          <Property Name="letnik" Type="int" />
+          <Property Name="vrstaVpisa" Type="int" />
+          <Property Name="nacinStudija" Type="int" />
+          <Property Name="oblikaStudija" Type="int" />
+          <Property Name="prostaIzbira" Type="int" />
+        </EntityType>
+        <Association Name="fk_Drzava_idDrzava">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzava" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drzava_idDrzavaDrzavljanstvo">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzavaDrzavljanstvo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drzava_idDrzavaRojstva">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzavaRojstva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drzava_idDrzavaZacasna">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzavaZacasna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzpitniRok_IdIzpitniRok">
+          <End Role="IzpitniRok" Type="Self.IzpitniRok" Multiplicity="0..1" />
+          <End Role="PrijavaNaIzpit" Type="Self.PrijavaNaIzpit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzpitniRok">
+              <PropertyRef Name="IDIzpitniRok" />
+            </Principal>
+            <Dependent Role="PrijavaNaIzpit">
+              <PropertyRef Name="IzpitniRok_IdIzpitniRok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_idIzvedbaPredmeta">
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="0..1" />
+          <End Role="IzpitniRok" Type="Self.IzpitniRok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzvedbaPredmeta">
+              <PropertyRef Name="idIzvedbaPredmeta" />
+            </Principal>
+            <Dependent Role="IzpitniRok">
+              <PropertyRef Name="IzvedbaPredmeta_idIzvedbaPredmeta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1">
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="IdPredmetStudijskegaPrograma" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="PredmetStudijskegaPrograma_PredmetStudijskegaProgramaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_Profesor1">
+          <End Role="Profesor" Type="Self.Profesor" Multiplicity="1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesor">
+              <PropertyRef Name="idProfesor" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="Profesor_idProfesor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_Profesor2">
+          <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesor">
+              <PropertyRef Name="idProfesor" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="Profesor_idProfesor1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_Profesor3">
+          <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesor">
+              <PropertyRef Name="idProfesor" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="Profesor_idProfesor2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_ŠtudijskoLeto1">
+          <End Role="StudijskoLeto" Type="Self.StudijskoLeto" Multiplicity="1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudijskoLeto">
+              <PropertyRef Name="idStudijskoLeto" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="StudijskoLeto_idStudijskoLeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Klasius_idKlasius">
+          <End Role="Klasius" Type="Self.Klasius" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klasius">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Klasius_idKlasius" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Obcina_idObcina">
+          <End Role="Obcina" Type="Self.Obcina" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obcina">
+              <PropertyRef Name="idObcina" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Obcina_idObcina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Obcina_idObcinaRojstva">
+          <End Role="Obcina" Type="Self.Obcina" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obcina">
+              <PropertyRef Name="idObcina" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Obcina_idObcinaRojstva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Obcina_idObcinaZacasna">
+          <End Role="Obcina" Type="Self.Obcina" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obcina">
+              <PropertyRef Name="idObcina" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Obcina_idObcinaZacasna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Posta_idPosta">
+          <End Role="Posta" Type="Self.Posta" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posta">
+              <PropertyRef Name="idPosta" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Posta_idPosta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Posta_idPostaZacasna">
+          <End Role="Posta" Type="Self.Posta" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posta">
+              <PropertyRef Name="idPosta" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Posta_idPostaZacasna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PredmetŠtudijskegaPrograma_Letnik1">
+          <End Role="Letnik" Type="Self.Letnik" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letnik">
+              <PropertyRef Name="idLetnik" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="Letnik_idLetnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PredmetŠtudijskegaPrograma_Predmet1">
+          <End Role="Predmet" Type="Self.Predmet" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Predmet">
+              <PropertyRef Name="idPredmet" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="Predmet_idPredmet1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1">
+          <End Role="StudijskiProgram" Type="Self.StudijskiProgram" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudijskiProgram">
+              <PropertyRef Name="idStudijskiProgram" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="StudijskiProgram_idStudijskiProgram1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Prijava_idPrijava">
+          <End Role="Prijava" Type="Self.Prijava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prijava">
+              <PropertyRef Name="idPrijava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Prijava_idPrijava" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sadsadasdsd">
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="0..1" />
+          <End Role="VpisaniPredmet" Type="Self.VpisaniPredmet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzvedbaPredmeta">
+              <PropertyRef Name="idIzvedbaPredmeta" />
+            </Principal>
+            <Dependent Role="VpisaniPredmet">
+              <PropertyRef Name="IzvedbaPredmeta_idIzvedbaPredmeta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Sklep_StudentId">
+          <End Role="Student" Type="Self.Student" Multiplicity="1" />
+          <End Role="Sklep" Type="Self.Sklep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="idStudent" />
+            </Principal>
+            <Dependent Role="Sklep">
+              <PropertyRef Name="Student_IdStudenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit">
+          <End Role="StatusPrijave" Type="Self.StatusPrijave" Multiplicity="0..1" />
+          <End Role="PrijavaNaIzpit" Type="Self.PrijavaNaIzpit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPrijave">
+              <PropertyRef Name="idStatusPrijave" />
+            </Principal>
+            <Dependent Role="PrijavaNaIzpit">
+              <PropertyRef Name="StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stopnjaStudija_IdStopnjaStudija">
+          <End Role="stopnjaStudija" Type="Self.stopnjaStudija" Multiplicity="0..1" />
+          <End Role="Klasius" Type="Self.Klasius" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stopnjaStudija">
+              <PropertyRef Name="idStopnjaStudija" />
+            </Principal>
+            <Dependent Role="Klasius">
+              <PropertyRef Name="stopnjaStudija_IdStopnjaStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student_idStudent">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="Zeton" Type="Self.Zeton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="idStudent" />
+            </Principal>
+            <Dependent Role="Zeton">
+              <PropertyRef Name="Student_idStudent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StudijskiProgram_stopnjaStudija">
+          <End Role="stopnjaStudija" Type="Self.stopnjaStudija" Multiplicity="0..1" />
+          <End Role="StudijskiProgram" Type="Self.StudijskiProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stopnjaStudija">
+              <PropertyRef Name="idStopnjaStudija" />
+            </Principal>
+            <Dependent Role="StudijskiProgram">
+              <PropertyRef Name="StudijskiProgram_idStopnjaStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_table2_SestavniDelPredmetnika1">
+          <End Role="SestavniDelPred" Type="Self.SestavniDelPred" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SestavniDelPred">
+              <PropertyRef Name="idSestavniDelPred" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="SestavniDelPred_idSestavniDelPred" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vloga_idVloga">
+          <End Role="Vloge" Type="Self.Vloge" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloge">
+              <PropertyRef Name="idVloge" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Vloge_idVloge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_idVpis">
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="0..1" />
+          <End Role="Zeton" Type="Self.Zeton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vpis">
+              <PropertyRef Name="idVpis" />
+            </Principal>
+            <Dependent Role="Zeton">
+              <PropertyRef Name="Vpis_idVpis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_Letnik1">
+          <End Role="Letnik" Type="Self.Letnik" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letnik">
+              <PropertyRef Name="idLetnik" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="Letnik_idLetnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_NačinŠtudija1">
+          <End Role="NacinStudija" Type="Self.NacinStudija" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NacinStudija">
+              <PropertyRef Name="idNacinStudija" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="NacinStudija_idNacinStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_OblikaŠtudija1">
+          <End Role="OblikaStudija" Type="Self.OblikaStudija" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OblikaStudija">
+              <PropertyRef Name="idOblikaStudija" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="OblikaStudija_idOblikaStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_Študent1">
+          <End Role="Student" Type="Self.Student" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="idStudent" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="Student_idStudent1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_ŠtudijskiProgram1">
+          <End Role="StudijskiProgram" Type="Self.StudijskiProgram" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudijskiProgram">
+              <PropertyRef Name="idStudijskiProgram" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="StudijskiProgram_idStudijskiProgram" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_VrstaVpisa1">
+          <End Role="VrstaVpisa" Type="Self.VrstaVpisa" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaVpisa">
+              <PropertyRef Name="idVrstaVpisa" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="VrstaVpisa_idVrstaVpisa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis1_idVpis">
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="1" />
+          <End Role="VpisaniPredmet" Type="Self.VpisaniPredmet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vpis">
+              <PropertyRef Name="idVpis" />
+            </Principal>
+            <Dependent Role="VpisaniPredmet">
+              <PropertyRef Name="Vpis_idVpis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VpisaniPredmet_IdVpisanipredmet">
+          <End Role="VpisaniPredmet" Type="Self.VpisaniPredmet" Multiplicity="0..1" />
+          <End Role="PrijavaNaIzpit" Type="Self.PrijavaNaIzpit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VpisaniPredmet">
+              <PropertyRef Name="idVpisaniPredmet" />
+            </Principal>
+            <Dependent Role="PrijavaNaIzpit">
+              <PropertyRef Name="VpisaniPredmet_IdVpisanipredmet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="t8_2015ModelStoreContainer">
+          <EntitySet Name="Drzava" EntityType="Self.Drzava" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="IzpitniRok" EntityType="Self.IzpitniRok" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="IzvedbaPredmeta" EntityType="Self.IzvedbaPredmeta" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Klasius" EntityType="Self.Klasius" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Letnik" EntityType="Self.Letnik" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="NacinStudija" EntityType="Self.NacinStudija" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Obcina" EntityType="Self.Obcina" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="OblikaStudija" EntityType="Self.OblikaStudija" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Posta" EntityType="Self.Posta" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Predmet" EntityType="Self.Predmet" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="PredmetStudijskegaPrograma" EntityType="Self.PredmetStudijskegaPrograma" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Prijava" EntityType="Self.Prijava" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="PrijavaNaIzpit" EntityType="Self.PrijavaNaIzpit" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Profesor" EntityType="Self.Profesor" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="SestavniDelPred" EntityType="Self.SestavniDelPred" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Sklep" EntityType="Self.Sklep" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="StatusPrijave" EntityType="Self.StatusPrijave" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="stopnjaStudija" EntityType="Self.stopnjaStudija" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="StudijskiProgram" EntityType="Self.StudijskiProgram" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="StudijskoLeto" EntityType="Self.StudijskoLeto" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Vloge" EntityType="Self.Vloge" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Vpis" EntityType="Self.Vpis" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="VpisaniPredmet" EntityType="Self.VpisaniPredmet" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="VrstaVpisa" EntityType="Self.VrstaVpisa" Schema="t8_2015" store:Type="Tables" />
+          <EntitySet Name="Zeton" EntityType="Self.Zeton" Schema="t8_2015" store:Type="Tables" />
+          <AssociationSet Name="fk_Drzava_idDrzava" Association="Self.fk_Drzava_idDrzava">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drzava_idDrzavaDrzavljanstvo" Association="Self.fk_Drzava_idDrzavaDrzavljanstvo">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drzava_idDrzavaRojstva" Association="Self.fk_Drzava_idDrzavaRojstva">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drzava_idDrzavaZacasna" Association="Self.fk_Drzava_idDrzavaZacasna">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzpitniRok_IdIzpitniRok" Association="Self.fk_IzpitniRok_IdIzpitniRok">
+            <End Role="IzpitniRok" EntitySet="IzpitniRok" />
+            <End Role="PrijavaNaIzpit" EntitySet="PrijavaNaIzpit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_idIzvedbaPredmeta" Association="Self.fk_IzvedbaPredmeta_idIzvedbaPredmeta">
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+            <End Role="IzpitniRok" EntitySet="IzpitniRok" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1" Association="Self.fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1">
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_Profesor1" Association="Self.fk_IzvedbaPredmeta_Profesor1">
+            <End Role="Profesor" EntitySet="Profesor" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_Profesor2" Association="Self.fk_IzvedbaPredmeta_Profesor2">
+            <End Role="Profesor" EntitySet="Profesor" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_Profesor3" Association="Self.fk_IzvedbaPredmeta_Profesor3">
+            <End Role="Profesor" EntitySet="Profesor" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_ŠtudijskoLeto1" Association="Self.fk_IzvedbaPredmeta_ŠtudijskoLeto1">
+            <End Role="StudijskoLeto" EntitySet="StudijskoLeto" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Klasius_idKlasius" Association="Self.fk_Klasius_idKlasius">
+            <End Role="Klasius" EntitySet="Klasius" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Obcina_idObcina" Association="Self.fk_Obcina_idObcina">
+            <End Role="Obcina" EntitySet="Obcina" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Obcina_idObcinaRojstva" Association="Self.fk_Obcina_idObcinaRojstva">
+            <End Role="Obcina" EntitySet="Obcina" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Obcina_idObcinaZacasna" Association="Self.fk_Obcina_idObcinaZacasna">
+            <End Role="Obcina" EntitySet="Obcina" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Posta_idPosta" Association="Self.fk_Posta_idPosta">
+            <End Role="Posta" EntitySet="Posta" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Posta_idPostaZacasna" Association="Self.fk_Posta_idPostaZacasna">
+            <End Role="Posta" EntitySet="Posta" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PredmetŠtudijskegaPrograma_Letnik1" Association="Self.fk_PredmetŠtudijskegaPrograma_Letnik1">
+            <End Role="Letnik" EntitySet="Letnik" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PredmetŠtudijskegaPrograma_Predmet1" Association="Self.fk_PredmetŠtudijskegaPrograma_Predmet1">
+            <End Role="Predmet" EntitySet="Predmet" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1" Association="Self.fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1">
+            <End Role="StudijskiProgram" EntitySet="StudijskiProgram" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Prijava_idPrijava" Association="Self.fk_Prijava_idPrijava">
+            <End Role="Prijava" EntitySet="Prijava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sadsadasdsd" Association="Self.fk_sadsadasdsd">
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+            <End Role="VpisaniPredmet" EntitySet="VpisaniPredmet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Sklep_StudentId" Association="Self.fk_Sklep_StudentId">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Sklep" EntitySet="Sklep" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" Association="Self.fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit">
+            <End Role="StatusPrijave" EntitySet="StatusPrijave" />
+            <End Role="PrijavaNaIzpit" EntitySet="PrijavaNaIzpit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stopnjaStudija_IdStopnjaStudija" Association="Self.fk_stopnjaStudija_IdStopnjaStudija">
+            <End Role="stopnjaStudija" EntitySet="stopnjaStudija" />
+            <End Role="Klasius" EntitySet="Klasius" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student_idStudent" Association="Self.fk_Student_idStudent">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Zeton" EntitySet="Zeton" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StudijskiProgram_stopnjaStudija" Association="Self.fk_StudijskiProgram_stopnjaStudija">
+            <End Role="stopnjaStudija" EntitySet="stopnjaStudija" />
+            <End Role="StudijskiProgram" EntitySet="StudijskiProgram" />
+          </AssociationSet>
+          <AssociationSet Name="fk_table2_SestavniDelPredmetnika1" Association="Self.fk_table2_SestavniDelPredmetnika1">
+            <End Role="SestavniDelPred" EntitySet="SestavniDelPred" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vloga_idVloga" Association="Self.fk_Vloga_idVloga">
+            <End Role="Vloge" EntitySet="Vloge" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_idVpis" Association="Self.fk_Vpis_idVpis">
+            <End Role="Vpis" EntitySet="Vpis" />
+            <End Role="Zeton" EntitySet="Zeton" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_Letnik1" Association="Self.fk_Vpis_Letnik1">
+            <End Role="Letnik" EntitySet="Letnik" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_NačinŠtudija1" Association="Self.fk_Vpis_NačinŠtudija1">
+            <End Role="NacinStudija" EntitySet="NacinStudija" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_OblikaŠtudija1" Association="Self.fk_Vpis_OblikaŠtudija1">
+            <End Role="OblikaStudija" EntitySet="OblikaStudija" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_Študent1" Association="Self.fk_Vpis_Študent1">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_ŠtudijskiProgram1" Association="Self.fk_Vpis_ŠtudijskiProgram1">
+            <End Role="StudijskiProgram" EntitySet="StudijskiProgram" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_VrstaVpisa1" Association="Self.fk_Vpis_VrstaVpisa1">
+            <End Role="VrstaVpisa" EntitySet="VrstaVpisa" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis1_idVpis" Association="Self.fk_Vpis1_idVpis">
+            <End Role="Vpis" EntitySet="Vpis" />
+            <End Role="VpisaniPredmet" EntitySet="VpisaniPredmet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VpisaniPredmet_IdVpisanipredmet" Association="Self.fk_VpisaniPredmet_IdVpisanipredmet">
+            <End Role="VpisaniPredmet" EntitySet="VpisaniPredmet" />
+            <End Role="PrijavaNaIzpit" EntitySet="PrijavaNaIzpit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="t8_2015Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Drzava">
+          <Key>
+            <PropertyRef Name="idDrzava" />
+          </Key>
+          <Property Name="idDrzava" Type="Int32" Nullable="false" />
+          <Property Name="imeDrzave" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Drzava_idDrzava" FromRole="Drzava" ToRole="Student" />
+          <NavigationProperty Name="Student1" Relationship="Self.fk_Drzava_idDrzavaDrzavljanstvo" FromRole="Drzava" ToRole="Student" />
+          <NavigationProperty Name="Student2" Relationship="Self.fk_Drzava_idDrzavaRojstva" FromRole="Drzava" ToRole="Student" />
+          <NavigationProperty Name="Student3" Relationship="Self.fk_Drzava_idDrzavaZacasna" FromRole="Drzava" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="IzpitniRok">
+          <Key>
+            <PropertyRef Name="IDIzpitniRok" />
+          </Key>
+          <Property Name="IDIzpitniRok" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DatumIzpitnegaRoka" Type="DateTime" />
+          <Property Name="VrstaIzpitnegaRoka" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Prostor" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="SteviloMest" Type="Int32" />
+          <Property Name="IzvedbaPredmeta_idIzvedbaPredmeta" Type="Int32" />
+          <Property Name="Veljaven" Type="Int32" />
+          <NavigationProperty Name="PrijavaNaIzpit" Relationship="Self.fk_IzpitniRok_IdIzpitniRok" FromRole="IzpitniRok" ToRole="PrijavaNaIzpit" />
+          <NavigationProperty Name="IzvedbaPredmeta" Relationship="Self.fk_IzvedbaPredmeta_idIzvedbaPredmeta" FromRole="IzpitniRok" ToRole="IzvedbaPredmeta" />
+        </EntityType>
+        <EntityType Name="IzvedbaPredmeta">
+          <Key>
+            <PropertyRef Name="idIzvedbaPredmeta" />
+          </Key>
+          <Property Name="idIzvedbaPredmeta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Profesor_idProfesor" Type="Int32" Nullable="false" />
+          <Property Name="Profesor_idProfesor1" Type="Int32" />
+          <Property Name="Profesor_idProfesor2" Type="Int32" />
+          <Property Name="StudijskoLeto_idStudijskoLeto" Type="Int32" Nullable="false" />
+          <Property Name="PredmetStudijskegaPrograma_PredmetStudijskegaProgramaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="IzpitniRok" Relationship="Self.fk_IzvedbaPredmeta_idIzvedbaPredmeta" FromRole="IzvedbaPredmeta" ToRole="IzpitniRok" />
+          <NavigationProperty Name="PredmetStudijskegaPrograma" Relationship="Self.fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1" FromRole="IzvedbaPredmeta" ToRole="PredmetStudijskegaPrograma" />
+          <NavigationProperty Name="Profesor" Relationship="Self.fk_IzvedbaPredmeta_Profesor1" FromRole="IzvedbaPredmeta" ToRole="Profesor" />
+          <NavigationProperty Name="Profesor1" Relationship="Self.fk_IzvedbaPredmeta_Profesor2" FromRole="IzvedbaPredmeta" ToRole="Profesor" />
+          <NavigationProperty Name="Profesor2" Relationship="Self.fk_IzvedbaPredmeta_Profesor3" FromRole="IzvedbaPredmeta" ToRole="Profesor" />
+          <NavigationProperty Name="StudijskoLeto" Relationship="Self.fk_IzvedbaPredmeta_ŠtudijskoLeto1" FromRole="IzvedbaPredmeta" ToRole="StudijskoLeto" />
+          <NavigationProperty Name="VpisaniPredmet" Relationship="Self.fk_sadsadasdsd" FromRole="IzvedbaPredmeta" ToRole="VpisaniPredmet" />
+        </EntityType>
+        <EntityType Name="Klasius">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="stopnjaStudija_IdStopnjaStudija" Type="Int32" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Klasius_idKlasius" FromRole="Klasius" ToRole="Student" />
+          <NavigationProperty Name="stopnjaStudija" Relationship="Self.fk_stopnjaStudija_IdStopnjaStudija" FromRole="Klasius" ToRole="stopnjaStudija" />
+        </EntityType>
+        <EntityType Name="Letnik">
+          <Key>
+            <PropertyRef Name="idLetnik" />
+          </Key>
+          <Property Name="idLetnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="letnik1" Type="Int32" />
+          <NavigationProperty Name="PredmetStudijskegaPrograma" Relationship="Self.fk_PredmetŠtudijskegaPrograma_Letnik1" FromRole="Letnik" ToRole="PredmetStudijskegaPrograma" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis_Letnik1" FromRole="Letnik" ToRole="Vpis" />
+        </EntityType>
+        <EntityType Name="NacinStudija">
+          <Key>
+            <PropertyRef Name="idNacinStudija" />
+          </Key>
+          <Property Name="idNacinStudija" Type="Int32" Nullable="false" />
+          <Property Name="opisNacina" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="engOpisNacina" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis_NačinŠtudija1" FromRole="NacinStudija" ToRole="Vpis" />
+        </EntityType>
+        <EntityType Name="Obcina">
+          <Key>
+            <PropertyRef Name="idObcina" />
+          </Key>
+          <Property Name="idObcina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imeObcine" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Obcina_idObcina" FromRole="Obcina" ToRole="Student" />
+          <NavigationProperty Name="Student1" Relationship="Self.fk_Obcina_idObcinaRojstva" FromRole="Obcina" ToRole="Student" />
+          <NavigationProperty Name="Student2" Relationship="Self.fk_Obcina_idObcinaZacasna" FromRole="Obcina" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="OblikaStudija">
+          <Key>
+            <PropertyRef Name="idOblikaStudija" />
+          </Key>
+          <Property Name="idOblikaStudija" Type="Int32" Nullable="false" />
+          <Property Name="opisOblike" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="engOpisOblike" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis_OblikaŠtudija1" FromRole="OblikaStudija" ToRole="Vpis" />
+        </EntityType>
+        <EntityType Name="Posta">
+          <Key>
+            <PropertyRef Name="idPosta" />
+          </Key>
+          <Property Name="idPosta" Type="Int32" Nullable="false" />
+          <Property Name="postnaStevilka" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Posta_idPosta" FromRole="Posta" ToRole="Student" />
+          <NavigationProperty Name="Student1" Relationship="Self.fk_Posta_idPostaZacasna" FromRole="Posta" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Predmet">
+          <Key>
+            <PropertyRef Name="idPredmet" />
+          </Key>
+          <Property Name="idPredmet" Type="Int32" Nullable="false" />
+          <Property Name="imePredmeta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="kreditneTocke" Type="Int32" />
+          <NavigationProperty Name="PredmetStudijskegaPrograma" Relationship="Self.fk_PredmetŠtudijskegaPrograma_Predmet1" FromRole="Predmet" ToRole="PredmetStudijskegaPrograma" />
+        </EntityType>
+        <EntityType Name="PredmetStudijskegaPrograma">
+          <Key>
+            <PropertyRef Name="IdPredmetStudijskegaPrograma" />
+          </Key>
+          <Property Name="SestavniDelPred_idSestavniDelPred" Type="Int32" Nullable="false" />
+          <Property Name="Letnik_idLetnik" Type="Int32" Nullable="false" />
+          <Property Name="StudijskiProgram_idStudijskiProgram1" Type="Int32" Nullable="false" />
+          <Property Name="Predmet_idPredmet1" Type="Int32" Nullable="false" />
+          <Property Name="IdPredmetStudijskegaPrograma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="IzvedbaPredmeta" Relationship="Self.fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1" FromRole="PredmetStudijskegaPrograma" ToRole="IzvedbaPredmeta" />
+          <NavigationProperty Name="Letnik" Relationship="Self.fk_PredmetŠtudijskegaPrograma_Letnik1" FromRole="PredmetStudijskegaPrograma" ToRole="Letnik" />
+          <NavigationProperty Name="Predmet" Relationship="Self.fk_PredmetŠtudijskegaPrograma_Predmet1" FromRole="PredmetStudijskegaPrograma" ToRole="Predmet" />
+          <NavigationProperty Name="StudijskiProgram" Relationship="Self.fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1" FromRole="PredmetStudijskegaPrograma" ToRole="StudijskiProgram" />
+          <NavigationProperty Name="SestavniDelPred" Relationship="Self.fk_table2_SestavniDelPredmetnika1" FromRole="PredmetStudijskegaPrograma" ToRole="SestavniDelPred" />
+        </EntityType>
+        <EntityType Name="Prijava">
+          <Key>
+            <PropertyRef Name="idPrijava" />
+          </Key>
+          <Property Name="idPrijava" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imeStudenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="priimekStudenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="gesloStudent" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="mailStudent" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Prijava_idPrijava" FromRole="Prijava" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="PrijavaNaIzpit">
+          <Key>
+            <PropertyRef Name="idPrijavaNaizpit" />
+          </Key>
+          <Property Name="idPrijavaNaizpit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DatumPrijave" Type="DateTime" />
+          <Property Name="DatumSpremembe" Type="DateTime" />
+          <Property Name="IzpitniRok_IdIzpitniRok" Type="Int32" />
+          <Property Name="VpisaniPredmet_IdVpisanipredmet" Type="Int32" />
+          <Property Name="StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" Type="Int32" />
+          <Property Name="OcenaIzpita" Type="Int32" />
+          <Property Name="StTock" Type="Int32" />
+          <NavigationProperty Name="IzpitniRok" Relationship="Self.fk_IzpitniRok_IdIzpitniRok" FromRole="PrijavaNaIzpit" ToRole="IzpitniRok" />
+          <NavigationProperty Name="StatusPrijave" Relationship="Self.fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" FromRole="PrijavaNaIzpit" ToRole="StatusPrijave" />
+          <NavigationProperty Name="VpisaniPredmet" Relationship="Self.fk_VpisaniPredmet_IdVpisanipredmet" FromRole="PrijavaNaIzpit" ToRole="VpisaniPredmet" />
+        </EntityType>
+        <EntityType Name="Profesor">
+          <Key>
+            <PropertyRef Name="idProfesor" />
+          </Key>
+          <Property Name="idProfesor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imeProfesorja" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="priimekProfesorja" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="IzvedbaPredmeta" Relationship="Self.fk_IzvedbaPredmeta_Profesor1" FromRole="Profesor" ToRole="IzvedbaPredmeta" />
+          <NavigationProperty Name="IzvedbaPredmeta1" Relationship="Self.fk_IzvedbaPredmeta_Profesor2" FromRole="Profesor" ToRole="IzvedbaPredmeta" />
+          <NavigationProperty Name="IzvedbaPredmeta2" Relationship="Self.fk_IzvedbaPredmeta_Profesor3" FromRole="Profesor" ToRole="IzvedbaPredmeta" />
+        </EntityType>
+        <EntityType Name="SestavniDelPred">
+          <Key>
+            <PropertyRef Name="idSestavniDelPred" />
+          </Key>
+          <Property Name="idSestavniDelPred" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opisSestavnegaDela" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="jeModul" Type="Boolean" />
+          <NavigationProperty Name="PredmetStudijskegaPrograma" Relationship="Self.fk_table2_SestavniDelPredmetnika1" FromRole="SestavniDelPred" ToRole="PredmetStudijskegaPrograma" />
+        </EntityType>
+        <EntityType Name="Sklep">
+          <Key>
+            <PropertyRef Name="idSklep" />
+          </Key>
+          <Property Name="idSklep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VsebinaSklepa" Type="String" MaxLength="9999" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Student_IdStudenta" Type="Int32" Nullable="false" />
+          <Property Name="Student_idStudent" Type="Int32" Nullable="false" />
+          <Property Name="Organ" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DatumSprejetjaSklepa" Type="DateTime" />
+          <Property Name="DatumVeljaveSklepa" Type="DateTime" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Sklep_StudentId" FromRole="Sklep" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="StatusPrijave">
+          <Key>
+            <PropertyRef Name="idStatusPrijave" />
+          </Key>
+          <Property Name="idStatusPrijave" Type="Int32" Nullable="false" />
+          <Property Name="opisStatusaPrijave" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PrijavaNaIzpit" Relationship="Self.fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" FromRole="StatusPrijave" ToRole="PrijavaNaIzpit" />
+        </EntityType>
+        <EntityType Name="stopnjaStudija">
+          <Key>
+            <PropertyRef Name="idStopnjaStudija" />
+          </Key>
+          <Property Name="idStopnjaStudija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kratica" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="stopnja" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Klasius" Relationship="Self.fk_stopnjaStudija_IdStopnjaStudija" FromRole="stopnjaStudija" ToRole="Klasius" />
+          <NavigationProperty Name="StudijskiProgram" Relationship="Self.fk_StudijskiProgram_stopnjaStudija" FromRole="stopnjaStudija" ToRole="StudijskiProgram" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="idStudent" />
+          </Key>
+          <Property Name="idStudent" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Drzava_idDrzava" Type="Int32" />
+          <Property Name="Posta_idPosta" Type="Int32" />
+          <Property Name="Drzava_idDrzavaRojstva" Type="Int32" />
+          <Property Name="Prijava_idPrijava" Type="Int32" />
+          <Property Name="imeStudenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="priimekStudenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="gesloStudenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="mailStudenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="vpisnaStudenta" Type="Int32" />
+          <Property Name="Vloge_idVloge" Type="Int32" />
+          <Property Name="Obcina_idObcina" Type="Int32" />
+          <Property Name="Naslov" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="NaslovZacasni" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Drzava_idDrzavaZacasna" Type="Int32" />
+          <Property Name="Posta_idPostaZacasna" Type="Int32" />
+          <Property Name="Telefon" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Obcina_idObcinaZacasna" Type="Int32" />
+          <Property Name="VrocanjeStalnoBivalisce" Type="SByte" />
+          <Property Name="EMSO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Drzava_idDrzavaDrzavljanstvo" Type="Int32" />
+          <Property Name="Spol" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DavcnaStevilka" Type="Int64" />
+          <Property Name="DatumRojstva" Type="DateTime" />
+          <Property Name="KrajRojstva" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Obcina_idObcinaRojstva" Type="Int32" />
+          <Property Name="Klasius_idKlasius" Type="Int32" />
+          <NavigationProperty Name="Drzava" Relationship="Self.fk_Drzava_idDrzava" FromRole="Student" ToRole="Drzava" />
+          <NavigationProperty Name="Drzava1" Relationship="Self.fk_Drzava_idDrzavaDrzavljanstvo" FromRole="Student" ToRole="Drzava" />
+          <NavigationProperty Name="Drzava2" Relationship="Self.fk_Drzava_idDrzavaRojstva" FromRole="Student" ToRole="Drzava" />
+          <NavigationProperty Name="Drzava3" Relationship="Self.fk_Drzava_idDrzavaZacasna" FromRole="Student" ToRole="Drzava" />
+          <NavigationProperty Name="Klasius" Relationship="Self.fk_Klasius_idKlasius" FromRole="Student" ToRole="Klasius" />
+          <NavigationProperty Name="Obcina" Relationship="Self.fk_Obcina_idObcina" FromRole="Student" ToRole="Obcina" />
+          <NavigationProperty Name="Obcina1" Relationship="Self.fk_Obcina_idObcinaRojstva" FromRole="Student" ToRole="Obcina" />
+          <NavigationProperty Name="Obcina2" Relationship="Self.fk_Obcina_idObcinaZacasna" FromRole="Student" ToRole="Obcina" />
+          <NavigationProperty Name="Posta" Relationship="Self.fk_Posta_idPosta" FromRole="Student" ToRole="Posta" />
+          <NavigationProperty Name="Posta1" Relationship="Self.fk_Posta_idPostaZacasna" FromRole="Student" ToRole="Posta" />
+          <NavigationProperty Name="Prijava" Relationship="Self.fk_Prijava_idPrijava" FromRole="Student" ToRole="Prijava" />
+          <NavigationProperty Name="Sklep" Relationship="Self.fk_Sklep_StudentId" FromRole="Student" ToRole="Sklep" />
+          <NavigationProperty Name="Zeton" Relationship="Self.fk_Student_idStudent" FromRole="Student" ToRole="Zeton" />
+          <NavigationProperty Name="Vloge" Relationship="Self.fk_Vloga_idVloga" FromRole="Student" ToRole="Vloge" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis_Študent1" FromRole="Student" ToRole="Vpis" />
+        </EntityType>
+        <EntityType Name="StudijskiProgram">
+          <Key>
+            <PropertyRef Name="idStudijskiProgram" />
+          </Key>
+          <Property Name="idStudijskiProgram" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="sifraEVS" Type="Int32" />
+          <Property Name="sifraKratka" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="stSemestrov" Type="Int32" />
+          <Property Name="StudijskiProgram_idStopnjaStudija" Type="Int32" />
+          <NavigationProperty Name="PredmetStudijskegaPrograma" Relationship="Self.fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1" FromRole="StudijskiProgram" ToRole="PredmetStudijskegaPrograma" />
+          <NavigationProperty Name="stopnjaStudija" Relationship="Self.fk_StudijskiProgram_stopnjaStudija" FromRole="StudijskiProgram" ToRole="stopnjaStudija" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis_ŠtudijskiProgram1" FromRole="StudijskiProgram" ToRole="Vpis" />
+        </EntityType>
+        <EntityType Name="StudijskoLeto">
+          <Key>
+            <PropertyRef Name="idStudijskoLeto" />
+          </Key>
+          <Property Name="idStudijskoLeto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="studijskoLeto1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="IzvedbaPredmeta" Relationship="Self.fk_IzvedbaPredmeta_ŠtudijskoLeto1" FromRole="StudijskoLeto" ToRole="IzvedbaPredmeta" />
+        </EntityType>
+        <EntityType Name="Vloge">
+          <Key>
+            <PropertyRef Name="idVloge" />
+          </Key>
+          <Property Name="idVloge" Type="Int32" Nullable="false" />
+          <Property Name="opisVloge" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Vloga_idVloga" FromRole="Vloge" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Vpis">
+          <Key>
+            <PropertyRef Name="idVpis" />
+          </Key>
+          <Property Name="idVpis" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VrstaVpisa_idVrstaVpisa" Type="Int32" Nullable="false" />
+          <Property Name="OblikaStudija_idOblikaStudija" Type="Int32" Nullable="false" />
+          <Property Name="Letnik_idLetnik" Type="Int32" Nullable="false" />
+          <Property Name="StudijskiProgram_idStudijskiProgram" Type="Int32" Nullable="false" />
+          <Property Name="NacinStudija_idNacinStudija" Type="Int32" Nullable="false" />
+          <Property Name="Student_idStudent1" Type="Int32" Nullable="false" />
+          <Property Name="Potrjen" Type="Int32" Nullable="false" />
+          <Property Name="StudijskoLeto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Letnik" Relationship="Self.fk_Vpis_Letnik1" FromRole="Vpis" ToRole="Letnik" />
+          <NavigationProperty Name="NacinStudija" Relationship="Self.fk_Vpis_NačinŠtudija1" FromRole="Vpis" ToRole="NacinStudija" />
+          <NavigationProperty Name="OblikaStudija" Relationship="Self.fk_Vpis_OblikaŠtudija1" FromRole="Vpis" ToRole="OblikaStudija" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Vpis_Študent1" FromRole="Vpis" ToRole="Student" />
+          <NavigationProperty Name="StudijskiProgram" Relationship="Self.fk_Vpis_ŠtudijskiProgram1" FromRole="Vpis" ToRole="StudijskiProgram" />
+          <NavigationProperty Name="Zeton" Relationship="Self.fk_Vpis_idVpis" FromRole="Vpis" ToRole="Zeton" />
+          <NavigationProperty Name="VrstaVpisa" Relationship="Self.fk_Vpis_VrstaVpisa1" FromRole="Vpis" ToRole="VrstaVpisa" />
+          <NavigationProperty Name="VpisaniPredmet" Relationship="Self.fk_Vpis1_idVpis" FromRole="Vpis" ToRole="VpisaniPredmet" />
+        </EntityType>
+        <EntityType Name="VpisaniPredmet">
+          <Key>
+            <PropertyRef Name="idVpisaniPredmet" />
+          </Key>
+          <Property Name="Vpis_idVpis" Type="Int32" Nullable="false" />
+          <Property Name="idVpisaniPredmet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ocena" Type="Int32" />
+          <Property Name="IzvedbaPredmeta_idIzvedbaPredmeta" Type="Int32" />
+          <NavigationProperty Name="IzvedbaPredmeta" Relationship="Self.fk_sadsadasdsd" FromRole="VpisaniPredmet" ToRole="IzvedbaPredmeta" />
+          <NavigationProperty Name="PrijavaNaIzpit" Relationship="Self.fk_VpisaniPredmet_IdVpisanipredmet" FromRole="VpisaniPredmet" ToRole="PrijavaNaIzpit" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis1_idVpis" FromRole="VpisaniPredmet" ToRole="Vpis" />
+        </EntityType>
+        <EntityType Name="VrstaVpisa">
+          <Key>
+            <PropertyRef Name="idVrstaVpisa" />
+          </Key>
+          <Property Name="idVrstaVpisa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opisVpisa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis_VrstaVpisa1" FromRole="VrstaVpisa" ToRole="Vpis" />
+        </EntityType>
+        <EntityType Name="Zeton">
+          <Key>
+            <PropertyRef Name="idZeton" />
+          </Key>
+          <Property Name="idZeton" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Izkoriscen" Type="Boolean" />
+          <Property Name="Student_idStudent" Type="Int32" />
+          <Property Name="Vpis_idVpis" Type="Int32" />
+          <Property Name="studijskiProgram" Type="Int32" />
+          <Property Name="letnik" Type="Int32" />
+          <Property Name="vrstaVpisa" Type="Int32" />
+          <Property Name="nacinStudija" Type="Int32" />
+          <Property Name="oblikaStudija" Type="Int32" />
+          <Property Name="prostaIzbira" Type="Int32" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Student_idStudent" FromRole="Zeton" ToRole="Student" />
+          <NavigationProperty Name="Vpis" Relationship="Self.fk_Vpis_idVpis" FromRole="Zeton" ToRole="Vpis" />
+        </EntityType>
+        <Association Name="fk_Drzava_idDrzava">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzava" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drzava_idDrzavaDrzavljanstvo">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzavaDrzavljanstvo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drzava_idDrzavaRojstva">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzavaRojstva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drzava_idDrzavaZacasna">
+          <End Role="Drzava" Type="Self.Drzava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzava">
+              <PropertyRef Name="idDrzava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Drzava_idDrzavaZacasna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzpitniRok_IdIzpitniRok">
+          <End Role="IzpitniRok" Type="Self.IzpitniRok" Multiplicity="0..1" />
+          <End Role="PrijavaNaIzpit" Type="Self.PrijavaNaIzpit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzpitniRok">
+              <PropertyRef Name="IDIzpitniRok" />
+            </Principal>
+            <Dependent Role="PrijavaNaIzpit">
+              <PropertyRef Name="IzpitniRok_IdIzpitniRok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_idIzvedbaPredmeta">
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="0..1" />
+          <End Role="IzpitniRok" Type="Self.IzpitniRok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzvedbaPredmeta">
+              <PropertyRef Name="idIzvedbaPredmeta" />
+            </Principal>
+            <Dependent Role="IzpitniRok">
+              <PropertyRef Name="IzvedbaPredmeta_idIzvedbaPredmeta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1">
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="IdPredmetStudijskegaPrograma" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="PredmetStudijskegaPrograma_PredmetStudijskegaProgramaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_Profesor1">
+          <End Role="Profesor" Type="Self.Profesor" Multiplicity="1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesor">
+              <PropertyRef Name="idProfesor" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="Profesor_idProfesor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_Profesor2">
+          <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesor">
+              <PropertyRef Name="idProfesor" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="Profesor_idProfesor1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_Profesor3">
+          <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesor">
+              <PropertyRef Name="idProfesor" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="Profesor_idProfesor2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_IzvedbaPredmeta_ŠtudijskoLeto1">
+          <End Role="StudijskoLeto" Type="Self.StudijskoLeto" Multiplicity="1" />
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudijskoLeto">
+              <PropertyRef Name="idStudijskoLeto" />
+            </Principal>
+            <Dependent Role="IzvedbaPredmeta">
+              <PropertyRef Name="StudijskoLeto_idStudijskoLeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sadsadasdsd">
+          <End Role="IzvedbaPredmeta" Type="Self.IzvedbaPredmeta" Multiplicity="0..1" />
+          <End Role="VpisaniPredmet" Type="Self.VpisaniPredmet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzvedbaPredmeta">
+              <PropertyRef Name="idIzvedbaPredmeta" />
+            </Principal>
+            <Dependent Role="VpisaniPredmet">
+              <PropertyRef Name="IzvedbaPredmeta_idIzvedbaPredmeta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Klasius_idKlasius">
+          <End Role="Klasius" Type="Self.Klasius" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klasius">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Klasius_idKlasius" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stopnjaStudija_IdStopnjaStudija">
+          <End Role="stopnjaStudija" Type="Self.stopnjaStudija" Multiplicity="0..1" />
+          <End Role="Klasius" Type="Self.Klasius" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stopnjaStudija">
+              <PropertyRef Name="idStopnjaStudija" />
+            </Principal>
+            <Dependent Role="Klasius">
+              <PropertyRef Name="stopnjaStudija_IdStopnjaStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PredmetŠtudijskegaPrograma_Letnik1">
+          <End Role="Letnik" Type="Self.Letnik" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letnik">
+              <PropertyRef Name="idLetnik" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="Letnik_idLetnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_Letnik1">
+          <End Role="Letnik" Type="Self.Letnik" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letnik">
+              <PropertyRef Name="idLetnik" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="Letnik_idLetnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_NačinŠtudija1">
+          <End Role="NacinStudija" Type="Self.NacinStudija" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NacinStudija">
+              <PropertyRef Name="idNacinStudija" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="NacinStudija_idNacinStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Obcina_idObcina">
+          <End Role="Obcina" Type="Self.Obcina" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obcina">
+              <PropertyRef Name="idObcina" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Obcina_idObcina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Obcina_idObcinaRojstva">
+          <End Role="Obcina" Type="Self.Obcina" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obcina">
+              <PropertyRef Name="idObcina" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Obcina_idObcinaRojstva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Obcina_idObcinaZacasna">
+          <End Role="Obcina" Type="Self.Obcina" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obcina">
+              <PropertyRef Name="idObcina" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Obcina_idObcinaZacasna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_OblikaŠtudija1">
+          <End Role="OblikaStudija" Type="Self.OblikaStudija" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OblikaStudija">
+              <PropertyRef Name="idOblikaStudija" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="OblikaStudija_idOblikaStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Posta_idPosta">
+          <End Role="Posta" Type="Self.Posta" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posta">
+              <PropertyRef Name="idPosta" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Posta_idPosta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Posta_idPostaZacasna">
+          <End Role="Posta" Type="Self.Posta" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posta">
+              <PropertyRef Name="idPosta" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Posta_idPostaZacasna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PredmetŠtudijskegaPrograma_Predmet1">
+          <End Role="Predmet" Type="Self.Predmet" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Predmet">
+              <PropertyRef Name="idPredmet" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="Predmet_idPredmet1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1">
+          <End Role="StudijskiProgram" Type="Self.StudijskiProgram" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudijskiProgram">
+              <PropertyRef Name="idStudijskiProgram" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="StudijskiProgram_idStudijskiProgram1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_table2_SestavniDelPredmetnika1">
+          <End Role="SestavniDelPred" Type="Self.SestavniDelPred" Multiplicity="1" />
+          <End Role="PredmetStudijskegaPrograma" Type="Self.PredmetStudijskegaPrograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SestavniDelPred">
+              <PropertyRef Name="idSestavniDelPred" />
+            </Principal>
+            <Dependent Role="PredmetStudijskegaPrograma">
+              <PropertyRef Name="SestavniDelPred_idSestavniDelPred" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Prijava_idPrijava">
+          <End Role="Prijava" Type="Self.Prijava" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prijava">
+              <PropertyRef Name="idPrijava" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Prijava_idPrijava" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit">
+          <End Role="StatusPrijave" Type="Self.StatusPrijave" Multiplicity="0..1" />
+          <End Role="PrijavaNaIzpit" Type="Self.PrijavaNaIzpit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPrijave">
+              <PropertyRef Name="idStatusPrijave" />
+            </Principal>
+            <Dependent Role="PrijavaNaIzpit">
+              <PropertyRef Name="StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VpisaniPredmet_IdVpisanipredmet">
+          <End Role="VpisaniPredmet" Type="Self.VpisaniPredmet" Multiplicity="0..1" />
+          <End Role="PrijavaNaIzpit" Type="Self.PrijavaNaIzpit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VpisaniPredmet">
+              <PropertyRef Name="idVpisaniPredmet" />
+            </Principal>
+            <Dependent Role="PrijavaNaIzpit">
+              <PropertyRef Name="VpisaniPredmet_IdVpisanipredmet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Sklep_StudentId">
+          <End Role="Student" Type="Self.Student" Multiplicity="1" />
+          <End Role="Sklep" Type="Self.Sklep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="idStudent" />
+            </Principal>
+            <Dependent Role="Sklep">
+              <PropertyRef Name="Student_IdStudenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StudijskiProgram_stopnjaStudija">
+          <End Role="stopnjaStudija" Type="Self.stopnjaStudija" Multiplicity="0..1" />
+          <End Role="StudijskiProgram" Type="Self.StudijskiProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stopnjaStudija">
+              <PropertyRef Name="idStopnjaStudija" />
+            </Principal>
+            <Dependent Role="StudijskiProgram">
+              <PropertyRef Name="StudijskiProgram_idStopnjaStudija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student_idStudent">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="Zeton" Type="Self.Zeton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="idStudent" />
+            </Principal>
+            <Dependent Role="Zeton">
+              <PropertyRef Name="Student_idStudent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vloga_idVloga">
+          <End Role="Vloge" Type="Self.Vloge" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vloge">
+              <PropertyRef Name="idVloge" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Vloge_idVloge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_Študent1">
+          <End Role="Student" Type="Self.Student" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="idStudent" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="Student_idStudent1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_ŠtudijskiProgram1">
+          <End Role="StudijskiProgram" Type="Self.StudijskiProgram" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudijskiProgram">
+              <PropertyRef Name="idStudijskiProgram" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="StudijskiProgram_idStudijskiProgram" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_idVpis">
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="0..1" />
+          <End Role="Zeton" Type="Self.Zeton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vpis">
+              <PropertyRef Name="idVpis" />
+            </Principal>
+            <Dependent Role="Zeton">
+              <PropertyRef Name="Vpis_idVpis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis_VrstaVpisa1">
+          <End Role="VrstaVpisa" Type="Self.VrstaVpisa" Multiplicity="1" />
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaVpisa">
+              <PropertyRef Name="idVrstaVpisa" />
+            </Principal>
+            <Dependent Role="Vpis">
+              <PropertyRef Name="VrstaVpisa_idVrstaVpisa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Vpis1_idVpis">
+          <End Role="Vpis" Type="Self.Vpis" Multiplicity="1" />
+          <End Role="VpisaniPredmet" Type="Self.VpisaniPredmet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vpis">
+              <PropertyRef Name="idVpis" />
+            </Principal>
+            <Dependent Role="VpisaniPredmet">
+              <PropertyRef Name="Vpis_idVpis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="t8_2015Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Drzava" EntityType="Self.Drzava" />
+          <EntitySet Name="IzpitniRok" EntityType="Self.IzpitniRok" />
+          <EntitySet Name="IzvedbaPredmeta" EntityType="Self.IzvedbaPredmeta" />
+          <EntitySet Name="Klasius" EntityType="Self.Klasius" />
+          <EntitySet Name="Letnik" EntityType="Self.Letnik" />
+          <EntitySet Name="NacinStudija" EntityType="Self.NacinStudija" />
+          <EntitySet Name="Obcina" EntityType="Self.Obcina" />
+          <EntitySet Name="OblikaStudija" EntityType="Self.OblikaStudija" />
+          <EntitySet Name="Posta" EntityType="Self.Posta" />
+          <EntitySet Name="Predmet" EntityType="Self.Predmet" />
+          <EntitySet Name="PredmetStudijskegaPrograma" EntityType="Self.PredmetStudijskegaPrograma" />
+          <EntitySet Name="Prijava" EntityType="Self.Prijava" />
+          <EntitySet Name="PrijavaNaIzpit" EntityType="Self.PrijavaNaIzpit" />
+          <EntitySet Name="Profesor" EntityType="Self.Profesor" />
+          <EntitySet Name="SestavniDelPred" EntityType="Self.SestavniDelPred" />
+          <EntitySet Name="Sklep" EntityType="Self.Sklep" />
+          <EntitySet Name="StatusPrijave" EntityType="Self.StatusPrijave" />
+          <EntitySet Name="stopnjaStudija" EntityType="Self.stopnjaStudija" />
+          <EntitySet Name="Student" EntityType="Self.Student" />
+          <EntitySet Name="StudijskiProgram" EntityType="Self.StudijskiProgram" />
+          <EntitySet Name="StudijskoLeto" EntityType="Self.StudijskoLeto" />
+          <EntitySet Name="Vloge" EntityType="Self.Vloge" />
+          <EntitySet Name="Vpis" EntityType="Self.Vpis" />
+          <EntitySet Name="VpisaniPredmet" EntityType="Self.VpisaniPredmet" />
+          <EntitySet Name="VrstaVpisa" EntityType="Self.VrstaVpisa" />
+          <EntitySet Name="Zeton" EntityType="Self.Zeton" />
+          <AssociationSet Name="fk_Drzava_idDrzava" Association="Self.fk_Drzava_idDrzava">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drzava_idDrzavaDrzavljanstvo" Association="Self.fk_Drzava_idDrzavaDrzavljanstvo">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drzava_idDrzavaRojstva" Association="Self.fk_Drzava_idDrzavaRojstva">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drzava_idDrzavaZacasna" Association="Self.fk_Drzava_idDrzavaZacasna">
+            <End Role="Drzava" EntitySet="Drzava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzpitniRok_IdIzpitniRok" Association="Self.fk_IzpitniRok_IdIzpitniRok">
+            <End Role="IzpitniRok" EntitySet="IzpitniRok" />
+            <End Role="PrijavaNaIzpit" EntitySet="PrijavaNaIzpit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_idIzvedbaPredmeta" Association="Self.fk_IzvedbaPredmeta_idIzvedbaPredmeta">
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+            <End Role="IzpitniRok" EntitySet="IzpitniRok" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1" Association="Self.fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1">
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_Profesor1" Association="Self.fk_IzvedbaPredmeta_Profesor1">
+            <End Role="Profesor" EntitySet="Profesor" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_Profesor2" Association="Self.fk_IzvedbaPredmeta_Profesor2">
+            <End Role="Profesor" EntitySet="Profesor" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_Profesor3" Association="Self.fk_IzvedbaPredmeta_Profesor3">
+            <End Role="Profesor" EntitySet="Profesor" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_IzvedbaPredmeta_ŠtudijskoLeto1" Association="Self.fk_IzvedbaPredmeta_ŠtudijskoLeto1">
+            <End Role="StudijskoLeto" EntitySet="StudijskoLeto" />
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sadsadasdsd" Association="Self.fk_sadsadasdsd">
+            <End Role="IzvedbaPredmeta" EntitySet="IzvedbaPredmeta" />
+            <End Role="VpisaniPredmet" EntitySet="VpisaniPredmet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Klasius_idKlasius" Association="Self.fk_Klasius_idKlasius">
+            <End Role="Klasius" EntitySet="Klasius" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stopnjaStudija_IdStopnjaStudija" Association="Self.fk_stopnjaStudija_IdStopnjaStudija">
+            <End Role="stopnjaStudija" EntitySet="stopnjaStudija" />
+            <End Role="Klasius" EntitySet="Klasius" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PredmetŠtudijskegaPrograma_Letnik1" Association="Self.fk_PredmetŠtudijskegaPrograma_Letnik1">
+            <End Role="Letnik" EntitySet="Letnik" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_Letnik1" Association="Self.fk_Vpis_Letnik1">
+            <End Role="Letnik" EntitySet="Letnik" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_NačinŠtudija1" Association="Self.fk_Vpis_NačinŠtudija1">
+            <End Role="NacinStudija" EntitySet="NacinStudija" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Obcina_idObcina" Association="Self.fk_Obcina_idObcina">
+            <End Role="Obcina" EntitySet="Obcina" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Obcina_idObcinaRojstva" Association="Self.fk_Obcina_idObcinaRojstva">
+            <End Role="Obcina" EntitySet="Obcina" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Obcina_idObcinaZacasna" Association="Self.fk_Obcina_idObcinaZacasna">
+            <End Role="Obcina" EntitySet="Obcina" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_OblikaŠtudija1" Association="Self.fk_Vpis_OblikaŠtudija1">
+            <End Role="OblikaStudija" EntitySet="OblikaStudija" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Posta_idPosta" Association="Self.fk_Posta_idPosta">
+            <End Role="Posta" EntitySet="Posta" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Posta_idPostaZacasna" Association="Self.fk_Posta_idPostaZacasna">
+            <End Role="Posta" EntitySet="Posta" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PredmetŠtudijskegaPrograma_Predmet1" Association="Self.fk_PredmetŠtudijskegaPrograma_Predmet1">
+            <End Role="Predmet" EntitySet="Predmet" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1" Association="Self.fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1">
+            <End Role="StudijskiProgram" EntitySet="StudijskiProgram" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_table2_SestavniDelPredmetnika1" Association="Self.fk_table2_SestavniDelPredmetnika1">
+            <End Role="SestavniDelPred" EntitySet="SestavniDelPred" />
+            <End Role="PredmetStudijskegaPrograma" EntitySet="PredmetStudijskegaPrograma" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Prijava_idPrijava" Association="Self.fk_Prijava_idPrijava">
+            <End Role="Prijava" EntitySet="Prijava" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" Association="Self.fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit">
+            <End Role="StatusPrijave" EntitySet="StatusPrijave" />
+            <End Role="PrijavaNaIzpit" EntitySet="PrijavaNaIzpit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VpisaniPredmet_IdVpisanipredmet" Association="Self.fk_VpisaniPredmet_IdVpisanipredmet">
+            <End Role="VpisaniPredmet" EntitySet="VpisaniPredmet" />
+            <End Role="PrijavaNaIzpit" EntitySet="PrijavaNaIzpit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Sklep_StudentId" Association="Self.fk_Sklep_StudentId">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Sklep" EntitySet="Sklep" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StudijskiProgram_stopnjaStudija" Association="Self.fk_StudijskiProgram_stopnjaStudija">
+            <End Role="stopnjaStudija" EntitySet="stopnjaStudija" />
+            <End Role="StudijskiProgram" EntitySet="StudijskiProgram" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student_idStudent" Association="Self.fk_Student_idStudent">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Zeton" EntitySet="Zeton" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vloga_idVloga" Association="Self.fk_Vloga_idVloga">
+            <End Role="Vloge" EntitySet="Vloge" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_Študent1" Association="Self.fk_Vpis_Študent1">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_ŠtudijskiProgram1" Association="Self.fk_Vpis_ŠtudijskiProgram1">
+            <End Role="StudijskiProgram" EntitySet="StudijskiProgram" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_idVpis" Association="Self.fk_Vpis_idVpis">
+            <End Role="Vpis" EntitySet="Vpis" />
+            <End Role="Zeton" EntitySet="Zeton" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis_VrstaVpisa1" Association="Self.fk_Vpis_VrstaVpisa1">
+            <End Role="VrstaVpisa" EntitySet="VrstaVpisa" />
+            <End Role="Vpis" EntitySet="Vpis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Vpis1_idVpis" Association="Self.fk_Vpis1_idVpis">
+            <End Role="Vpis" EntitySet="Vpis" />
+            <End Role="VpisaniPredmet" EntitySet="VpisaniPredmet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="t8_2015ModelStoreContainer" CdmEntityContainer="t8_2015Entities1">
+          <EntitySetMapping Name="Drzava">
+            <EntityTypeMapping TypeName="t8_2015Model.Drzava">
+              <MappingFragment StoreEntitySet="Drzava">
+                <ScalarProperty Name="idDrzava" ColumnName="idDrzava" />
+                <ScalarProperty Name="imeDrzave" ColumnName="imeDrzave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IzpitniRok">
+            <EntityTypeMapping TypeName="t8_2015Model.IzpitniRok">
+              <MappingFragment StoreEntitySet="IzpitniRok">
+                <ScalarProperty Name="IDIzpitniRok" ColumnName="IDIzpitniRok" />
+                <ScalarProperty Name="DatumIzpitnegaRoka" ColumnName="DatumIzpitnegaRoka" />
+                <ScalarProperty Name="VrstaIzpitnegaRoka" ColumnName="VrstaIzpitnegaRoka" />
+                <ScalarProperty Name="Prostor" ColumnName="Prostor" />
+                <ScalarProperty Name="SteviloMest" ColumnName="SteviloMest" />
+                <ScalarProperty Name="IzvedbaPredmeta_idIzvedbaPredmeta" ColumnName="IzvedbaPredmeta_idIzvedbaPredmeta" />
+                <ScalarProperty Name="Veljaven" ColumnName="Veljaven" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IzvedbaPredmeta">
+            <EntityTypeMapping TypeName="t8_2015Model.IzvedbaPredmeta">
+              <MappingFragment StoreEntitySet="IzvedbaPredmeta">
+                <ScalarProperty Name="idIzvedbaPredmeta" ColumnName="idIzvedbaPredmeta" />
+                <ScalarProperty Name="Profesor_idProfesor" ColumnName="Profesor_idProfesor" />
+                <ScalarProperty Name="Profesor_idProfesor1" ColumnName="Profesor_idProfesor1" />
+                <ScalarProperty Name="Profesor_idProfesor2" ColumnName="Profesor_idProfesor2" />
+                <ScalarProperty Name="StudijskoLeto_idStudijskoLeto" ColumnName="StudijskoLeto_idStudijskoLeto" />
+                <ScalarProperty Name="PredmetStudijskegaPrograma_PredmetStudijskegaProgramaId" ColumnName="PredmetStudijskegaPrograma_PredmetStudijskegaProgramaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klasius">
+            <EntityTypeMapping TypeName="t8_2015Model.Klasius">
+              <MappingFragment StoreEntitySet="Klasius">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="stopnjaStudija_IdStopnjaStudija" ColumnName="stopnjaStudija_IdStopnjaStudija" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Letnik">
+            <EntityTypeMapping TypeName="t8_2015Model.Letnik">
+              <MappingFragment StoreEntitySet="Letnik">
+                <ScalarProperty Name="idLetnik" ColumnName="idLetnik" />
+                <ScalarProperty Name="letnik1" ColumnName="letnik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NacinStudija">
+            <EntityTypeMapping TypeName="t8_2015Model.NacinStudija">
+              <MappingFragment StoreEntitySet="NacinStudija">
+                <ScalarProperty Name="idNacinStudija" ColumnName="idNacinStudija" />
+                <ScalarProperty Name="opisNacina" ColumnName="opisNacina" />
+                <ScalarProperty Name="engOpisNacina" ColumnName="engOpisNacina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obcina">
+            <EntityTypeMapping TypeName="t8_2015Model.Obcina">
+              <MappingFragment StoreEntitySet="Obcina">
+                <ScalarProperty Name="idObcina" ColumnName="idObcina" />
+                <ScalarProperty Name="imeObcine" ColumnName="imeObcine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OblikaStudija">
+            <EntityTypeMapping TypeName="t8_2015Model.OblikaStudija">
+              <MappingFragment StoreEntitySet="OblikaStudija">
+                <ScalarProperty Name="idOblikaStudija" ColumnName="idOblikaStudija" />
+                <ScalarProperty Name="opisOblike" ColumnName="opisOblike" />
+                <ScalarProperty Name="engOpisOblike" ColumnName="engOpisOblike" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posta">
+            <EntityTypeMapping TypeName="t8_2015Model.Posta">
+              <MappingFragment StoreEntitySet="Posta">
+                <ScalarProperty Name="idPosta" ColumnName="idPosta" />
+                <ScalarProperty Name="postnaStevilka" ColumnName="postnaStevilka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Predmet">
+            <EntityTypeMapping TypeName="t8_2015Model.Predmet">
+              <MappingFragment StoreEntitySet="Predmet">
+                <ScalarProperty Name="idPredmet" ColumnName="idPredmet" />
+                <ScalarProperty Name="imePredmeta" ColumnName="imePredmeta" />
+                <ScalarProperty Name="kreditneTocke" ColumnName="kreditneTocke" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PredmetStudijskegaPrograma">
+            <EntityTypeMapping TypeName="t8_2015Model.PredmetStudijskegaPrograma">
+              <MappingFragment StoreEntitySet="PredmetStudijskegaPrograma">
+                <ScalarProperty Name="SestavniDelPred_idSestavniDelPred" ColumnName="SestavniDelPred_idSestavniDelPred" />
+                <ScalarProperty Name="Letnik_idLetnik" ColumnName="Letnik_idLetnik" />
+                <ScalarProperty Name="StudijskiProgram_idStudijskiProgram1" ColumnName="StudijskiProgram_idStudijskiProgram1" />
+                <ScalarProperty Name="Predmet_idPredmet1" ColumnName="Predmet_idPredmet1" />
+                <ScalarProperty Name="IdPredmetStudijskegaPrograma" ColumnName="IdPredmetStudijskegaPrograma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prijava">
+            <EntityTypeMapping TypeName="t8_2015Model.Prijava">
+              <MappingFragment StoreEntitySet="Prijava">
+                <ScalarProperty Name="idPrijava" ColumnName="idPrijava" />
+                <ScalarProperty Name="imeStudenta" ColumnName="imeStudenta" />
+                <ScalarProperty Name="priimekStudenta" ColumnName="priimekStudenta" />
+                <ScalarProperty Name="gesloStudent" ColumnName="gesloStudent" />
+                <ScalarProperty Name="mailStudent" ColumnName="mailStudent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrijavaNaIzpit">
+            <EntityTypeMapping TypeName="t8_2015Model.PrijavaNaIzpit">
+              <MappingFragment StoreEntitySet="PrijavaNaIzpit">
+                <ScalarProperty Name="idPrijavaNaizpit" ColumnName="idPrijavaNaizpit" />
+                <ScalarProperty Name="DatumPrijave" ColumnName="DatumPrijave" />
+                <ScalarProperty Name="DatumSpremembe" ColumnName="DatumSpremembe" />
+                <ScalarProperty Name="IzpitniRok_IdIzpitniRok" ColumnName="IzpitniRok_IdIzpitniRok" />
+                <ScalarProperty Name="VpisaniPredmet_IdVpisanipredmet" ColumnName="VpisaniPredmet_IdVpisanipredmet" />
+                <ScalarProperty Name="StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" ColumnName="StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" />
+                <ScalarProperty Name="OcenaIzpita" ColumnName="OcenaIzpita" />
+                <ScalarProperty Name="StTock" ColumnName="StTock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profesor">
+            <EntityTypeMapping TypeName="t8_2015Model.Profesor">
+              <MappingFragment StoreEntitySet="Profesor">
+                <ScalarProperty Name="idProfesor" ColumnName="idProfesor" />
+                <ScalarProperty Name="imeProfesorja" ColumnName="imeProfesorja" />
+                <ScalarProperty Name="priimekProfesorja" ColumnName="priimekProfesorja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SestavniDelPred">
+            <EntityTypeMapping TypeName="t8_2015Model.SestavniDelPred">
+              <MappingFragment StoreEntitySet="SestavniDelPred">
+                <ScalarProperty Name="idSestavniDelPred" ColumnName="idSestavniDelPred" />
+                <ScalarProperty Name="opisSestavnegaDela" ColumnName="opisSestavnegaDela" />
+                <ScalarProperty Name="jeModul" ColumnName="jeModul" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sklep">
+            <EntityTypeMapping TypeName="t8_2015Model.Sklep">
+              <MappingFragment StoreEntitySet="Sklep">
+                <ScalarProperty Name="idSklep" ColumnName="idSklep" />
+                <ScalarProperty Name="VsebinaSklepa" ColumnName="VsebinaSklepa" />
+                <ScalarProperty Name="Student_IdStudenta" ColumnName="Student_IdStudenta" />
+                <ScalarProperty Name="Student_idStudent" ColumnName="Student_idStudent" />
+                <ScalarProperty Name="Organ" ColumnName="Organ" />
+                <ScalarProperty Name="DatumSprejetjaSklepa" ColumnName="DatumSprejetjaSklepa" />
+                <ScalarProperty Name="DatumVeljaveSklepa" ColumnName="DatumVeljaveSklepa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusPrijave">
+            <EntityTypeMapping TypeName="t8_2015Model.StatusPrijave">
+              <MappingFragment StoreEntitySet="StatusPrijave">
+                <ScalarProperty Name="idStatusPrijave" ColumnName="idStatusPrijave" />
+                <ScalarProperty Name="opisStatusaPrijave" ColumnName="opisStatusaPrijave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stopnjaStudija">
+            <EntityTypeMapping TypeName="t8_2015Model.stopnjaStudija">
+              <MappingFragment StoreEntitySet="stopnjaStudija">
+                <ScalarProperty Name="idStopnjaStudija" ColumnName="idStopnjaStudija" />
+                <ScalarProperty Name="kratica" ColumnName="kratica" />
+                <ScalarProperty Name="stopnja" ColumnName="stopnja" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="t8_2015Model.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+                <ScalarProperty Name="Drzava_idDrzava" ColumnName="Drzava_idDrzava" />
+                <ScalarProperty Name="Posta_idPosta" ColumnName="Posta_idPosta" />
+                <ScalarProperty Name="Drzava_idDrzavaRojstva" ColumnName="Drzava_idDrzavaRojstva" />
+                <ScalarProperty Name="Prijava_idPrijava" ColumnName="Prijava_idPrijava" />
+                <ScalarProperty Name="imeStudenta" ColumnName="imeStudenta" />
+                <ScalarProperty Name="priimekStudenta" ColumnName="priimekStudenta" />
+                <ScalarProperty Name="gesloStudenta" ColumnName="gesloStudenta" />
+                <ScalarProperty Name="mailStudenta" ColumnName="mailStudenta" />
+                <ScalarProperty Name="vpisnaStudenta" ColumnName="vpisnaStudenta" />
+                <ScalarProperty Name="Vloge_idVloge" ColumnName="Vloge_idVloge" />
+                <ScalarProperty Name="Obcina_idObcina" ColumnName="Obcina_idObcina" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="NaslovZacasni" ColumnName="NaslovZacasni" />
+                <ScalarProperty Name="Drzava_idDrzavaZacasna" ColumnName="Drzava_idDrzavaZacasna" />
+                <ScalarProperty Name="Posta_idPostaZacasna" ColumnName="Posta_idPostaZacasna" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Obcina_idObcinaZacasna" ColumnName="Obcina_idObcinaZacasna" />
+                <ScalarProperty Name="VrocanjeStalnoBivalisce" ColumnName="VrocanjeStalnoBivalisce" />
+                <ScalarProperty Name="EMSO" ColumnName="EMSO" />
+                <ScalarProperty Name="Drzava_idDrzavaDrzavljanstvo" ColumnName="Drzava_idDrzavaDrzavljanstvo" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="DavcnaStevilka" ColumnName="DavcnaStevilka" />
+                <ScalarProperty Name="DatumRojstva" ColumnName="DatumRojstva" />
+                <ScalarProperty Name="KrajRojstva" ColumnName="KrajRojstva" />
+                <ScalarProperty Name="Obcina_idObcinaRojstva" ColumnName="Obcina_idObcinaRojstva" />
+                <ScalarProperty Name="Klasius_idKlasius" ColumnName="Klasius_idKlasius" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudijskiProgram">
+            <EntityTypeMapping TypeName="t8_2015Model.StudijskiProgram">
+              <MappingFragment StoreEntitySet="StudijskiProgram">
+                <ScalarProperty Name="idStudijskiProgram" ColumnName="idStudijskiProgram" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="sifraEVS" ColumnName="sifraEVS" />
+                <ScalarProperty Name="sifraKratka" ColumnName="sifraKratka" />
+                <ScalarProperty Name="stSemestrov" ColumnName="stSemestrov" />
+                <ScalarProperty Name="StudijskiProgram_idStopnjaStudija" ColumnName="StudijskiProgram_idStopnjaStudija" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudijskoLeto">
+            <EntityTypeMapping TypeName="t8_2015Model.StudijskoLeto">
+              <MappingFragment StoreEntitySet="StudijskoLeto">
+                <ScalarProperty Name="idStudijskoLeto" ColumnName="idStudijskoLeto" />
+                <ScalarProperty Name="studijskoLeto1" ColumnName="studijskoLeto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vloge">
+            <EntityTypeMapping TypeName="t8_2015Model.Vloge">
+              <MappingFragment StoreEntitySet="Vloge">
+                <ScalarProperty Name="idVloge" ColumnName="idVloge" />
+                <ScalarProperty Name="opisVloge" ColumnName="opisVloge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vpis">
+            <EntityTypeMapping TypeName="t8_2015Model.Vpis">
+              <MappingFragment StoreEntitySet="Vpis">
+                <ScalarProperty Name="idVpis" ColumnName="idVpis" />
+                <ScalarProperty Name="VrstaVpisa_idVrstaVpisa" ColumnName="VrstaVpisa_idVrstaVpisa" />
+                <ScalarProperty Name="OblikaStudija_idOblikaStudija" ColumnName="OblikaStudija_idOblikaStudija" />
+                <ScalarProperty Name="Letnik_idLetnik" ColumnName="Letnik_idLetnik" />
+                <ScalarProperty Name="StudijskiProgram_idStudijskiProgram" ColumnName="StudijskiProgram_idStudijskiProgram" />
+                <ScalarProperty Name="NacinStudija_idNacinStudija" ColumnName="NacinStudija_idNacinStudija" />
+                <ScalarProperty Name="Student_idStudent1" ColumnName="Student_idStudent1" />
+                <ScalarProperty Name="Potrjen" ColumnName="Potrjen" />
+                <ScalarProperty Name="StudijskoLeto" ColumnName="StudijskoLeto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VpisaniPredmet">
+            <EntityTypeMapping TypeName="t8_2015Model.VpisaniPredmet">
+              <MappingFragment StoreEntitySet="VpisaniPredmet">
+                <ScalarProperty Name="Vpis_idVpis" ColumnName="Vpis_idVpis" />
+                <ScalarProperty Name="idVpisaniPredmet" ColumnName="idVpisaniPredmet" />
+                <ScalarProperty Name="ocena" ColumnName="ocena" />
+                <ScalarProperty Name="IzvedbaPredmeta_idIzvedbaPredmeta" ColumnName="IzvedbaPredmeta_idIzvedbaPredmeta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VrstaVpisa">
+            <EntityTypeMapping TypeName="t8_2015Model.VrstaVpisa">
+              <MappingFragment StoreEntitySet="VrstaVpisa">
+                <ScalarProperty Name="idVrstaVpisa" ColumnName="idVrstaVpisa" />
+                <ScalarProperty Name="opisVpisa" ColumnName="opisVpisa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zeton">
+            <EntityTypeMapping TypeName="t8_2015Model.Zeton">
+              <MappingFragment StoreEntitySet="Zeton">
+                <ScalarProperty Name="idZeton" ColumnName="idZeton" />
+                <ScalarProperty Name="Izkoriscen" ColumnName="Izkoriscen" />
+                <ScalarProperty Name="Student_idStudent" ColumnName="Student_idStudent" />
+                <ScalarProperty Name="Vpis_idVpis" ColumnName="Vpis_idVpis" />
+                <ScalarProperty Name="studijskiProgram" ColumnName="studijskiProgram" />
+                <ScalarProperty Name="letnik" ColumnName="letnik" />
+                <ScalarProperty Name="vrstaVpisa" ColumnName="vrstaVpisa" />
+                <ScalarProperty Name="nacinStudija" ColumnName="nacinStudija" />
+                <ScalarProperty Name="oblikaStudija" ColumnName="oblikaStudija" />
+                <ScalarProperty Name="prostaIzbira" ColumnName="prostaIzbira" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

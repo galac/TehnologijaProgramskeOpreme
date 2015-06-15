@@ -1,0 +1,10 @@
+SELECT 
+    `Vpis`.`idVpis`,
+    `Vpis`.`VrstaVpisa_idVrstaVpisa`,
+    `Vpis`.`OblikaStudija_idOblikaStudija`,
+    `Vpis`.`Letnik_idLetnik`,
+    `Vpis`.`StudijskiProgram_idStudijskiProgram`,
+    `Vpis`.`NacinStudija_idNacinStudija`,
+    `Vpis`.`Student_idStudent1`
+FROM
+    `t8_2015`.`Vpis`;

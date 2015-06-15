@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+<<<<<<< HEAD
+    
+  <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --></configSections>
+=======
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+  </configSections>
+  <!--
+  Lukatova koda START
+  -->
+>>>>>>> origin/Luka_new_branch
+  <system.web>
+    <authentication mode="Forms">
+      <forms name="MYWEBAPP.ASPXAUTH" loginUrl="LoginForm.aspx" protection="All" path="/" />
+    </authentication>
+    <authorization>
+      <allow users="*" />
+    </authorization>
+    <membership defaultProvider="MySQLMembershipProvider">
+      <providers>
+        <remove name="MySQLMembershipProvider" />
+        <add name="MySQLMembershipProvider" type="MySql.Web.Security.MySQLMembershipProvider, MySql.Web, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" connectionStringName="LocalMySqlServer" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="true" applicationName="/" requiresUniqueEmail="false" passwordFormat="Clear" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="7" minRequiredNonalphanumericCharacters="1" passwordAttemptWindow="10" passwordStrengthRegularExpression="" />
+      </providers>
+    </membership>
+    <profile defaultProvider="MySQLProfileProvider">
+      <providers>
+        <remove name="MySQLProfileProvider" />
+        <add name="MySQLProfileProvider" type="MySql.Web.Profile.MySQLProfileProvider, MySql.Web, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" connectionStringName="LocalMySqlServer" applicationName="/" />
+      </providers>
+    </profile>
+    <roleManager defaultProvider="MySQLRoleProvider">
+      <providers>
+        <remove name="MySQLRoleProvider" />
+        <add name="MySQLRoleProvider" type="MySql.Web.Security.MySQLRoleProvider, MySql.Web, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" connectionStringName="LocalMySqlServer" applicationName="/" />
+      </providers>
+    </roleManager>
+    <siteMap defaultProvider="MySqlSiteMapProvider">
+      <providers>
+        <remove name="MySqlSiteMapProvider" />
+        <add name="MySqlSiteMapProvider" type="MySql.Web.SiteMap.MySqlSiteMapProvider, MySql.Web, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" connectionStringName="LocalMySqlServer" applicationName="/" />
+      </providers>
+    </siteMap>
+    <webParts>
+      <personalization defaultProvider="MySQLPersonalizationProvider">
+        <providers>
+          <remove name="MySQLPersonalizationProvider" />
+          <add name="MySQLPersonalizationProvider" type="MySql.Web.Personalization.MySqlPersonalizationProvider, MySql.Web, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" connectionStringName="LocalMySqlServer" applicationName="/" />
+        </providers>
+      </personalization>
+    </webParts>
+  </system.web>
+  <location path="Referent">
+    <system.web>
+      <authorization>
+        <!-- Order and case are important below -->
+        <allow roles="1" />
+        <deny users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <location path="users">
+    <system.web>
+      <authorization>
+        <!-- Order and case are important below -->
+        <allow roles="User" />
+        <deny users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <!--
+  <location path="LoginForm.aspx">
+      <system.web>
+         <authorization>
+            <allow users="*"/>
+         </authorization>
+      </system.web>
+   </location>
+  <appSettings>
+    <add key="autoFormsAuthentication" value="false" />
+    <add key="enableSimpleMembership" value="false"/>
+   </appSettings>
+   
+  Lukatova koda STOP
+  -->
+  <system.web>
+    <!--
+  Lukatova koda START
+  
+   
+   <authentication mode="Forms">
+     <forms name=".ASPXFORMSDEMO" loginUrl="LoginForm.aspx" 
+   protection="All" path="/" timeout="30" />
+  </authentication>
+    
+ <authorization>
+   <allow users = "*" />
+ </authorization>
+		
+  <deny users ="?" />
+  Lukatova koda STOP
+  -->
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+    <pages>
+      <namespaces>
+        <add namespace="System.Web.Optimization" />
+      </namespaces>
+      <controls>
+        <add assembly="Microsoft.AspNet.Web.Optimization.WebForms" namespace="Microsoft.AspNet.Web.Optimization.WebForms" tagPrefix="webopt" />
+      </controls>
+    </pages>
+  </system.web>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="EntityFramework" publicKeyToken="B77A5C561934E089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" culture="neutral" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="MySql.Data" publicKeyToken="c5687fc88969c44d" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.9.6.0" newVersion="6.9.6.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="EntityFramework" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <!-- <remove invariant="MySql.Data.MySqlClient" />
+      <add name="MySQL Data Provider" invariant="MySql.Data.MySqlClient" description=".Net Framework Data Provider for MySQL" type="MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />-->
+  <entityFramework>
+    <defaultConnectionFactory type="MySql.Data.Entity.MySqlConnectionFactory, MySql.Data.Entity.EF6" />
+<<<<<<< HEAD
+    <providers>
+      <!--<provider invariantName="MySql.Data.MySqlClient" type="MySql.Data.MySqlClient.MySqlProviderServices, MySql.Data.Entity.EF6" />
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />-->
+    <provider invariantName="MySql.Data.MySqlClient" type="MySql.Data.MySqlClient.MySqlProviderServices, MySql.Data.Entity.EF6, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      </provider></providers>
+=======
+>>>>>>> origin/Luka_new_branch
+    <!-- <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
+      <parameters>
+        <parameter value="v12.0" />
+      </parameters>
+    </defaultConnectionFactory>
+    <providers>
+      <provider invariantName="MySql.Data.MySqlClient" type="MySql.Data.MySqlClient.MySqlProviderServices, MySql.Data.Entity.EF6, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"></provider>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>-->
+    <providers>
+      <provider invariantName="MySql.Data.MySqlClient" type="MySql.Data.MySqlClient.MySqlProviderServices, MySql.Data.Entity.EF6, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"></provider>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+  <connectionStrings>
+    <add name="t8_2015Entities" connectionString="metadata=res://*/AdoModel.csdl|res://*/AdoModel.ssdl|res://*/AdoModel.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=slavnik.fri.uni-lj.si;user id=mh6946;password=j7vukcgreh;database=t8_2015;persistsecurityinfo=True&quot;" providerName="System.Data.EntityClient" />
+    <remove name="LocalMySqlServer" />
+    <add name="LocalMySqlServer" connectionString="" providerName="MySql.Data.MySqlClient" />
+  </connectionStrings>
+  <system.data>
+    <DbProviderFactories>
+      <remove invariant="MySql.Data.MySqlClient" />
+      <add name="MySQL Data Provider" invariant="MySql.Data.MySqlClient" description=".Net Framework Data Provider for MySQL" type="MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    </DbProviderFactories>
+  </system.data>
+</configuration>

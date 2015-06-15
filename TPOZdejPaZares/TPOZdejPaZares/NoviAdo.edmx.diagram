@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab2f6cf373dd4079803f19c34a16b92b" Name="Diagram1">
+        <EntityTypeShape EntityType="t8_2015Model.Drzava" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.IzpitniRok" Width="1.5" PointX="13.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.IzvedbaPredmeta" Width="1.5" PointX="11.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Klasius" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Letnik" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.NacinStudija" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Obcina" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.OblikaStudija" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Posta" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Predmet" Width="1.5" PointX="6.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.PredmetStudijskegaPrograma" Width="1.5" PointX="9" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Prijava" Width="1.5" PointX="0.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.PrijavaNaIzpit" Width="1.5" PointX="15.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Profesor" Width="1.5" PointX="9" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.SestavniDelPred" Width="1.5" PointX="6.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Sklep" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.StatusPrijave" Width="1.5" PointX="13.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.stopnjaStudija" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Student" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.StudijskiProgram" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.StudijskoLeto" Width="1.5" PointX="9" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Vloge" Width="1.5" PointX="0.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Vpis" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.VpisaniPredmet" Width="1.5" PointX="13.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.VrstaVpisa" Width="1.5" PointX="6" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="t8_2015Model.Zeton" Width="1.5" PointX="10.5" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="t8_2015Model.fk_Drzava_idDrzava" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Drzava_idDrzavaDrzavljanstvo" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Drzava_idDrzavaRojstva" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Drzava_idDrzavaZacasna" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_IzpitniRok_IdIzpitniRok" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_IzvedbaPredmeta_idIzvedbaPredmeta" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_IzvedbaPredmeta_PredmetStudijskegaPrograma1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_IzvedbaPredmeta_Profesor1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_IzvedbaPredmeta_Profesor2" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_IzvedbaPredmeta_Profesor3" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_IzvedbaPredmeta_ŠtudijskoLeto1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_sadsadasdsd" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Klasius_idKlasius" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_stopnjaStudija_IdStopnjaStudija" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_PredmetŠtudijskegaPrograma_Letnik1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis_Letnik1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis_NačinŠtudija1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Obcina_idObcina" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Obcina_idObcinaRojstva" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Obcina_idObcinaZacasna" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis_OblikaŠtudija1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Posta_idPosta" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Posta_idPostaZacasna" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_PredmetŠtudijskegaPrograma_Predmet1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_PredmetŠtudijskegaPrograma_ŠtudijskiProgram1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_table2_SestavniDelPredmetnika1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Prijava_idPrijava" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_StatusPrijaveNaIzpit_IdStatusPrijaveNaIzpit" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_VpisaniPredmet_IdVpisanipredmet" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Sklep_StudentId" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_StudijskiProgram_stopnjaStudija" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Student_idStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vloga_idVloga" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis_Študent1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis_ŠtudijskiProgram1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis_idVpis" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis_VrstaVpisa1" ManuallyRouted="false" />
+        <AssociationConnector Association="t8_2015Model.fk_Vpis1_idVpis" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Diagnostics;
+
+namespace TPOZdejPaZares.Referent
+{
+    public partial class UpravljanjeSklepov : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (GridView1.SelectedIndex == -1) GridView2.Visible = true;
+        }
+
+        protected void EntityDataSource1_Selecting(object sender, EntityDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            t8_2015Entities db = new t8_2015Entities();
+            var izbrani = GridView1.SelectedRow.Cells[3].Text;
+            /* Debug.Write("ID STUDENTA.-.--------------------------------------------------------------------------------" + izbrani);
+            
+             var sklepi = (from s in db.Sklep
+                             .Where(s => s.Student_IdStudenta.ToString().Equals(izbrani))
+                           select new {Vsebina = s.VsebinaSklepa })
+                             ;
+            
+             GridView2.DataSource = sklepi.AsEnumerable().ToList();
+             GridView2.DataBind();*/
+            GridView2.Visible = true;
+        }
+
+        protected void Sklepi_Selecting(object sender, EntityDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(vsebinaInput.Text) && !string.IsNullOrWhiteSpace(datumInput.Text) && !string.IsNullOrWhiteSpace(organInput.Text) && GridView1.SelectedIndex!=-1)
+            {
+                t8_2015Entities db = new t8_2015Entities();
+                var noviSklep = new Sklep();
+                noviSklep.Student_IdStudenta = (int)GridView1.SelectedValue;
+                noviSklep.VsebinaSklepa = vsebinaInput.Text;
+                noviSklep.Organ = vsebinaInput.Text;
+                noviSklep.DatumSprejetjaSklepa = Convert.ToDateTime(datumInput.Text);
+<<<<<<< HEAD
+=======
+                noviSklep.DatumVeljaveSklepa = Convert.ToDateTime(VeljavnostInput.Text);
+>>>>>>> Luka_new_branch
+                db.Sklep.Add(noviSklep);
+                db.SaveChanges();
+                Response.Redirect("UpravljanjeSklepov.aspx");
+            }
+        }
+
+        protected void vsebinaInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

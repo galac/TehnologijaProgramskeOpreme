@@ -1,0 +1,16 @@
+idStudent,imeStudenta,priimekStudenta,gesloStudenta,mailStudenta,vpisnaStudenta,Vloge_idVloge,Klasius_idKlasius
+63121025,Referent,Prvi,test123,referent@referent.com,NULL,2,NULL
+63121026,Denis,Popaj,test123,denis.popaj@gmail.com,63110001,1,15002
+63121027,Nevenka,Mitec,test123,nevenka.mitec@gmail.com,63110002,1,15002
+63121028,Goran,Štul,test123,goran.stul@gmail.com,63110003,1,15002
+63121029,Daniel,Skovik,test123,daniel.skovik@gmail.com,63120001,1,15002
+63121030,Jasna,Kukelj,test123,jasna.kukelj@gmail.com,63120002,1,15002
+63121031,Andreja,Stankovič,test123,andreja.stankovic@gmail.com,63120003,1,15002
+63121032,Sandi,Češnik,test123,sandi.cesnik@gmail.com,63130001,1,15002
+63121033,Anamarija,Petrovič,test123,anamarija.petrovic@gmail.com,63130002,1,15002
+63121034,Klemen,Perhlevan,test123,klemen.perhlevan@gmail.com,63140001,1,15002
+63121035,Marija,Vrhunc,test123,marija.vrhunc@gmail.com,63140002,1,15002
+63121036,Ucitelj,Ena,test123,ucitelj.ena@gmail.com,NULL,3,NULL
+63121044,Steve,Jobc,test123,sceve.obs@macintosh.com,63150000,1,15002
+63121045,Marta,Peršl,test123,marta.persl@gmail.com,63140003,1,15002
+63121052,Boštjan,Slivnik,test123,bostjan.slivnik@fri.uni-lj.si,NULL,3,NULL

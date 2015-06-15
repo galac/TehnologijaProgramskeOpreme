@@ -1,0 +1,15 @@
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2005/2006");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2006/2007");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2007/2008");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2008/2009");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2009/2010");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2010/2011");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2011/2012");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2012/2013");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2013/2014");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2014/2015");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2015/2016");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2016/2017");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2017/2018");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2018/2019");
+INSERT INTO `t8_2015`.`StudijskoLeto`(`studijskoLeto`)VALUES("2019/2020");

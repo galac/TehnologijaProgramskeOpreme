@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TPOZdejPaZares.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Spletni Student</title>
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+  <script type="text/javascript" src="/scripts/moment.min.js"></script>
+  <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
+  <!-- include your less or built css files  -->
+  <!-- 
+  bootstrap-datetimepicker-build.less will pull in "../bootstrap/variables.less" and "bootstrap-datetimepicker.less";
+  or-->
+  <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.css" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server" id="f">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Default">Spletni student</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" id="LinkLogin" href="~/LoginForm">Prijava</a></li>
+                        <li><a runat="server" id="LinkPozabljenoG" href="~/PozabljenoGeslo">Pozabljeno Geslo</a></li>
+                        <li><a runat="server" id="LinkPonastaviG" href="~/PonastaviGeslo" visible="false">Ponastavi Geslo</a></li>
+                        <li><a runat="server" id="LinkIskanjeStudentov" href="~/Student" visible="false">Iskanje študentov</a></li>
+                        <li><a runat="server" id="LinkParsanje" href="~/Referent/ParsanjePodatkov" visible="false">Uvažanje podatkov</a></li>
+                        <li><a runat="server" id="LinkVpisniList" href="~/ZajemVpisnegaLista" visible="false">Zajem vpisnega lista</a></li>
+                        <li><a runat="server" id="LinkVpisniListReferent" href="~/Referent/UvodVVpisniList" visible="false">Zajem vpisnega lista</a></li>
+                        <li><a runat="server" id="LinkVpisniListStudent" href="~/Studentek/ZajemVpisnegaListaStudent" visible="false">Zajem vpisnega lista</a></li>
+                        <li><a runat="server" id="LinkIzpisVpisniListStudent" href="~/Studentek/IzpisVpisnegaListaStudent" visible="false">Izpis vpisnega lista</a></li>
+                        <li><a runat="server" id="LinkIzpisVpisniListReferent" href="~/Referent/UvodVIzpisVpisnegaLista" visible="false">Izpis vpisnega lista</a></li>
+                        <li><a runat="server" id="LinkUpSklepov" href="~/UpravljanjeSklepov" visible="false">Upravljanje sklepov</a></li>
+                        
+                        <li><a runat="server" id="AdminLink" href="~/Referent/TestReferent" visible="false">Referent</a></li>
+                        <li><a runat="server" id="LinkPP" href="~/PotrditevVpisa" visible="false">Potrditev Vpisa</a></li>
+                        <li><a runat="server" id="LinkPI" href="~/PrijavaIzpit" visible="false">Prijava Na Izpit</a></li>
+                        <li><a runat="server" id="Link_Student_KartotecniListStudent" href="~/Studentek/KartotecniListStudent" visible="false">Kartotečni list</a></li>
+
+                        <%-- Linki samo za referenta --%>
+                        <li><a runat="server" id="Link_Referent_IskanjeStudentov" href="~/Student" visible="false">Iskanje študentov</a></li>
+                        <li><a runat="server" id="Link_Referent_Predmetnik" href="~/Referent/Predmetnik" visible="false">Predmetnik</a></li>
+                        <li><a runat="server" id="Link_Referent_Predmeti" href="~/Referent/Predmeti" visible="false">Predmeti</a></li>
+                        <li><a runat="server" id="Link_Referent_VnosIzpitnegaRoka" href="~/Referent/VnosIzpitnegaRoka" visible="false">Vnos izpitnega roka</a></li>
+                        <li><a runat="server" id="Link_Referent_SeznamVpisanih" href="~/Ucitelj/SeznamVpisanih" visible="false">Seznam vpisanih</a></li>
+                        <li><%--<a runat="server" id="Link_Referent_IzbiraPredmetovReferent" href="~/Referent/IzbiraPredmetovReferent" visible="false">Sprememba predmetnika študenta</a>--%></li>
+                        <li><a runat="server" id="Link_Referent_SeznamPrijavljenihNaIzpitniRokRef" href="~/Referent/SeznamPrijavljenihNaIzpitniRokRef" visible="false">Prijavljeni na izpitne roke</a></li>
+                        <li><a runat="server" id="Link_Referent_RezultatiPisnegaDelaIzpitaRef" href="~/Referent/RezultatiPisnegaDelaIzpitaRef" visible="false">Rezultati pisnih delov izpitov</a></li>
+                        <li><a runat="server" id="Link_Referent_SeznamKoncnihOcenIzpitaRef" href="~/Referent/SeznamKoncnihOcenIzpitaRef" visible="false">Končne ocene izpitnih rokov</a></li>
+                        <li><a runat="server" id="Link_Referent_KartotecniListReferent" href="~/Referent/UvodVKartotecniList" visible="false">Kartotečni list</a></li>
+                        <li><a runat="server" id="Link_Referent_VnosRezultatovPisnegaDelaIzpitaInKoncnihOcen" href="~/Referent/VnosRezultatovPisnegaDelaIzpitaInKoncnihOcenRef" visible="false">Vnos ocen</a></li>
+                        <li><a runat="server" id="Link_Referent_Zetoni" href="~/Referent/Zetoni" visible="false">Žetoni</a></li>
+                        
+                        <%-- Linki samo za ucitelja --%>
+                        <li><a runat="server" id="Link_Ucitelj_IskanjeStudentov" href="~/Ucitelj/IskanjeStudentov" visible="false">Iskanje študentov</a></li>
+                        <li><a runat="server" id="Link_Ucitelj_SeznamVpisanih" href="~/Ucitelj/SeznamVpisanih" visible="false">Seznam vpisanih</a></li>
+                        <li><a runat="server" id="Link_Ucitelj_SeznamPrijavljenihNaIzpitniRokUcitelj" href="~/Ucitelj/SeznamPrijavljenihNaIzpitniRokUcitelj" visible="false">Prijave na izpitne roke</a></li>
+                        <li><a runat="server" id="Link_Ucitelj_RezultatiPisnegaDelaIzpitaUcitelj" href="~/Ucitelj/RezultatiPisnegaDelaIzpitaUcitelj" visible="false">Rezultati pisnih delov izpitov</a></li>
+                        <li><a runat="server" id="Link_Ucitelj_SeznamKoncnihOcenIzpitaUcitelj" href="~/Ucitelj/SeznamKoncnihOcenIzpitaUcitelj" visible="false">Končne ocene izpitnih rokov</a></li>
+                        <li><a runat="server" id="Link_Ucitelj_VnosRezultatovPisnegaDelaIzpitaInKoncnihOcen" href="~/Ucitelj/VnosRezultatovPisnegaDelaIzpitaInKoncnihOcen" visible="false">Vnos ocen</a></li>
+                        
+
+                        <li> <asp:Button ID="ButtonOdjava" runat="server" OnClick="Button1_Click" Text="Odjava" CssClass="btn btn-info" Style="position:relative; top:0.8em;"/></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="display: block; height: 15em"></div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+                    <a class="navbar-brand" runat="server" href="~/Default">
+           
+            </a>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Spletni Student¸ 
+                    <asp:Label runat="server" ID="labelIme"></asp:Label>
+                    <asp:Label runat="server" ID="labelVpisna"></asp:Label>
+                    <asp:Label runat="server" ID="labelVloga"></asp:Label>
+                </p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

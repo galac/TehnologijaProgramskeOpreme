@@ -1,0 +1,10 @@
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("B","predbolonjski","visokošolski strokovni");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("C","predbolonjski","univerzitetni");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("F","predbolonjski","magistrski");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("G","predbolonjski","doktorski");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("J","prva stopnja","visokošolski strokovni");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("K","prva stopnja","univerzitetni");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("L","druga stopnja","magistrski");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("M","tretja stopnja","doktorski");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("71","","visokošolski (univerzitetni) študij");
+INSERT INTO `t8_2015`.`stopnjaStudija`(`kratica`,`stopnja`,`naziv`) VALUES ("61","","višješolski študij");
