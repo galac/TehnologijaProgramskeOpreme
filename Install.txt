@@ -1,0 +1,40 @@
+                      Funduc Software Touch
+                      Funduc Software, Inc.
+             Copyright 2009-2013, All Rights Reserved
+     http://www.funduc.com/  http://www.searchandreplace.com
+            
+Thank you for using Funduc Software utilities!
+
+FS Touch is a freeware 'touch' utility that is used to change the
+attributes and created/date/Modified Date & time stamps on one or
+more files.  The program can also add/subtract a specified number
+of seconds to each file's date/time stamp.
+
+FS Touch can be run interactively from the graphical interface or
+via command line switches from a .bat file.
+
+The program currently available in 32-bit & 64-bit version. It
+runs on Windows XP, Vista, and Windows 7. If you are running a 64-
+bit (x64) operating system please install the 64-bit version.
+
+Installation Instructions
+-------------------------
+
+1 - Unzip the contents of this archive into the subdirectory of
+your choice.  We suggest using
+     C:\Tools\FSTouch
+although any subdirectory will do. 
+
+2 - Optionally, create a shortcut to launch fsTouch32.exe (32-bit
+version) or fsTouch64.exe (64-bit version)
+
+See the program .chm file TXT for instructions on using FS Touch.
+
+
+Uninstall
+---------
+1 - Delete the files in the subdirectory you created above.
+
+2 - Delete any shortcuts or program manger entries you created to 
+    the program.
+
